@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover"/>
 <title>Blessed Joe Best Gadgets — Premium Tech Store</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Montserrat:wght@300;400;500;600;700;800&family=Oswald:wght@400;500;600;700&family=Syne:wght@700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"/>
 <style>
@@ -21,7 +21,7 @@ body{background:var(--surface);color:var(--text);font-family:'Montserrat',sans-s
 #curR.h{transform:scale(2.2);opacity:.25;}
 .topbar{background:var(--navy-dark);color:rgba(255,255,255,.7);text-align:center;padding:.45rem;font-size:.72rem;letter-spacing:2px;}
 .topbar b{color:var(--gold-light);}
-nav{position:sticky;top:0;z-index:500;background:var(--navy);padding:0 2.5rem;display:flex;align-items:center;justify-content:space-between;border-bottom:3px solid var(--gold);box-shadow:0 4px 30px rgba(0,0,0,.3);}
+nav{position:sticky;top:0;z-index:500;background:var(--navy);padding:0 2.5rem;display:flex;align-items:center;justify-content:space-between;border-bottom:3px solid var(--gold);box-shadow:0 4px 30px rgba(0,0,0,.3);overflow:visible;min-height:64px;}
 .nbrand{display:flex;align-items:center;gap:.9rem;padding:.6rem 0;text-decoration:none;}
 .nlogo{width:60px;height:60px;border-radius:50%;border:2.5px solid var(--gold);object-fit:cover;box-shadow:0 0 18px rgba(212,160,23,.4);}
 .nbname{font-family:'Playfair Display',serif;font-size:.95rem;font-weight:900;color:#fff;line-height:1.2;}
@@ -73,7 +73,7 @@ nav{position:sticky;top:0;z-index:500;background:var(--navy);padding:0 2.5rem;di
 .bghost:hover{border-color:var(--gold);background:#fff;color:var(--gold-dark);}
 
 /* ── PRICE CALLOUT ── */
-.hero-price-callout{display:inline-flex;flex-direction:column;background:linear-gradient(135deg,rgba(255,248,220,.9),rgba(255,252,240,.95));border:1.5px solid rgba(212,160,23,.3);border-radius:16px;padding:.85rem 1.4rem;margin-bottom:1.6rem;backdrop-filter:blur(8px);box-shadow:0 4px 20px rgba(212,160,23,.12),inset 0 1px 0 rgba(255,255,255,.8);width:fit-content;}
+.hero-price-callout{display:inline-flex;flex-direction:column;background:linear-gradient(135deg,rgba(255,248,220,.9),rgba(255,252,240,.95));border:1.5px solid rgba(212,160,23,.3);border-radius:16px;padding:.85rem 1.4rem;margin-bottom:1.6rem;backdrop-filter:blur(8px);box-shadow:0 4px 20px rgba(212,160,23,.12),inset 0 1px 0 rgba(255,255,255,.8);width:fit-content;max-width:100%;}
 .hpc-label{font-size:.68rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);}
 .hpc-price{font-family:'Oswald',sans-serif;font-size:1.9rem;font-weight:700;color:var(--gold-dark);line-height:1.15;margin:.2rem 0 .1rem;}
 .hpc-sub{font-size:.68rem;color:var(--muted);}
@@ -163,7 +163,7 @@ nav{position:sticky;top:0;z-index:500;background:var(--navy);padding:0 2.5rem;di
 .mbar{background:linear-gradient(90deg,var(--gold-dark),var(--gold),var(--gold-dark));padding:.65rem 0;overflow:hidden;}
 .mtrack{display:flex;gap:3rem;animation:marquee 28s linear infinite;white-space:nowrap;}
 .mitem{font-family:'Oswald',sans-serif;font-size:.95rem;letter-spacing:3px;color:var(--navy-dark);display:flex;align-items:center;gap:1rem;flex-shrink:0;font-weight:600;}
-section{padding:5rem 2.5rem;}
+section{padding:5rem 2.5rem;max-width:100%;box-sizing:border-box;}
 .eye{font-size:.7rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:.5rem;display:block;}
 .stitle{font-family:'Playfair Display',serif;font-size:clamp(1.9rem,4vw,2.8rem);font-weight:900;color:var(--text);line-height:1.1;}
 .stitle span{color:var(--gold-dark);}
@@ -202,12 +202,12 @@ section{padding:5rem 2.5rem;}
 .pbname{font-family:'Oswald',sans-serif;font-size:1.7rem;font-weight:700;letter-spacing:3px;color:var(--text);margin-bottom:.3rem;}
 .pbsub{color:var(--gold-dark);font-size:.78rem;}
 /* FILTER BAR */
-.fbar{display:flex;gap:.6rem;flex-wrap:wrap;margin-bottom:1.8rem;}
+.fbar{display:flex;gap:.6rem;flex-wrap:wrap;margin-bottom:1.8rem;width:100%;box-sizing:border-box;}
 .fbtn{background:#fff;border:1.5px solid rgba(212,160,23,.3);border-radius:100px;padding:.45rem 1.1rem;font-family:'Montserrat',sans-serif;font-size:.75rem;font-weight:600;color:var(--muted);cursor:pointer;transition:all .2s;}
 .fbtn:hover,.fbtn.act{background:linear-gradient(135deg,var(--gold-light),var(--gold));color:#fff;border-color:var(--gold);box-shadow:0 4px 12px rgba(212,160,23,.3);}
 /* PRODUCT GRID */
-.pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(255px,1fr));gap:1.4rem;}
-.pcard{background:#fff;border:1px solid rgba(212,160,23,.15);border-radius:16px;overflow:hidden;transition:all .3s cubic-bezier(.23,1,.32,1);cursor:pointer;}
+.pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(255px,45%),1fr));gap:1.4rem;}
+.pcard{background:#fff;border:1px solid rgba(212,160,23,.15);border-radius:16px;overflow:hidden;transition:box-shadow .3s,border-color .3s,transform .3s cubic-bezier(.23,1,.32,1);cursor:pointer;contain:layout style;}
 .pcard:hover{transform:translateY(-8px);border-color:rgba(212,160,23,.5);box-shadow:0 25px 50px rgba(26,43,92,.15);}
 .picon{font-size:5rem;line-height:1;}
 .pbadge{position:absolute;top:.9rem;left:.9rem;padding:.22rem .65rem;border-radius:4px;font-size:.62rem;font-weight:800;letter-spacing:1px;text-transform:uppercase;}
@@ -524,7 +524,7 @@ section{padding:5rem 2.5rem;}
 .barlbl{text-align:center;font-size:.6rem;color:var(--muted);margin-top:.3rem;}
 .addpform{background:#fff;border-radius:12px;padding:2rem;box-shadow:0 2px 8px rgba(0,0,0,.06);}
 /* FOOTER */
-footer{background:#fff;border-top:3px solid var(--gold);padding:3.5rem 2.5rem 2rem;}
+footer{background:#fff;border-top:3px solid var(--gold);padding:3.5rem 2.5rem 2rem;overflow:hidden;}
 .ftop{display:grid;grid-template-columns:2.5fr 1fr 1fr 1fr;gap:2.5rem;margin-bottom:2.5rem;}
 .flogo{width:80px;height:80px;border-radius:50%;border:2px solid var(--gold);margin-bottom:.8rem;object-fit:cover;}
 .fname{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:900;color:var(--text);margin-bottom:.4rem;}
@@ -733,7 +733,7 @@ footer{background:#fff;border-top:3px solid var(--gold);padding:3.5rem 2.5rem 2r
   /* PRODUCT GRID — 2 compact cards */
   .pgrid{grid-template-columns:repeat(2,1fr);gap:.8rem;}
   .pimgwrap{height:170px;}
-  .pcs-slide img{max-width:80%;max-height:80%;}
+  .pcs-slide img{width:100%;height:100%;object-fit:cover;}
   .picon{font-size:3.2rem;}
   .pinfo{padding:.9rem .85rem;}
   .pbrnd{font-size:.62rem;margin-bottom:.2rem;}
@@ -1303,11 +1303,11 @@ footer{background:#fff;border-top:3px solid var(--gold);padding:3.5rem 2.5rem 2r
 
 /* ── PRODUCT CARD CAROUSEL ── */
 .pimgwrap{position:relative;overflow:hidden;height:220px;background:#fff;display:flex;align-items:center;justify-content:center;border-bottom:1.5px solid rgba(212,160,23,.12);}
-.pcs{position:relative;width:100%;height:100%;display:flex;align-items:center;justify-content:center;}
-.pcs-slide{display:none;width:100%;height:100%;align-items:center;justify-content:center;}
-.pcs-slide.act{display:flex;}
-.pcs-slide img{max-width:86%;max-height:86%;width:auto;height:auto;object-fit:contain;display:block;padding:6px;mix-blend-mode:multiply;transition:transform .4s cubic-bezier(.23,1,.32,1);filter:drop-shadow(0 6px 20px rgba(26,43,92,.13));}
-.pcard:hover .pcs-slide.act img{transform:scale(1.07) translateY(-4px);}
+.pcs{position:relative;width:100%;height:100%;isolation:isolate;}
+.pcs-slide{position:absolute;inset:0;width:100%;height:100%;display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:opacity .25s ease;pointer-events:none;}
+.pcs-slide.act{opacity:1;visibility:visible;pointer-events:auto;}
+.pcs-slide img{width:86%;height:86%;object-fit:contain;display:block;margin:auto;mix-blend-mode:multiply;filter:drop-shadow(0 6px 24px rgba(26,43,92,.10));will-change:auto;padding:8px;}
+.pcard:hover .pcs-slide.act img{transform:scale(1.03);transition:transform .3s cubic-bezier(.23,1,.32,1);}
 .pcs-arr{position:absolute;top:50%;transform:translateY(-50%);z-index:6;background:rgba(255,255,255,.88);border:1px solid rgba(212,160,23,.3);border-radius:50%;width:26px;height:26px;display:flex;align-items:center;justify-content:center;font-size:1rem;line-height:1;color:var(--gold-dark);cursor:pointer;opacity:0;transition:opacity .2s,background .2s;padding:0;}
 .pcs-prev{left:6px;}.pcs-next{right:6px;}
 .pimgwrap:hover .pcs-arr{opacity:1;}
@@ -1318,6 +1318,365 @@ footer{background:#fff;border-top:3px solid var(--gold);padding:3.5rem 2.5rem 2r
 /* ── Slide add-to-cart / view details within featured slider ── */
 .hslide .bgold{border-radius:100px!important;}
 .hslide .bghost{border-radius:100px!important;backdrop-filter:blur(8px)!important;}
+
+
+/* ── PRODUCT IMAGE QUALITY ── */
+.pimgwrap img, .slide-img, .hero-product, .scard-prod-img {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+.pimgwrap {
+  background: linear-gradient(135deg, #FAFAF5 0%, #FFF8F0 100%);
+}
+
+
+/* ── TABLET (600px-768px) ── */
+@media(min-width:601px) and (max-width:768px) {
+  .hcta { flex-direction:row; flex-wrap:wrap; }
+  .hcta a, .hcta .metal-wrap { width:auto; max-width:280px; }
+  .pgrid { grid-template-columns:repeat(3,1fr); gap:1rem; }
+  .pimgwrap { height:160px; }
+  .at-right { min-height:350px; }
+}
+/* ── 600px breakpoint ── */
+@media(max-width:600px) {
+  .scroll-header h2 { font-size:clamp(1.4rem,6.5vw,2rem); }
+  .scroll-header p { font-size:.78rem; }
+}
+
+/* ══════════════════════════════════════════
+   COMPREHENSIVE RESPONSIVE FIXES
+   ══════════════════════════════════════════ */
+
+/* Safe area support for notched phones */
+:root {
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  --safe-left: env(safe-area-inset-left, 0px);
+  --safe-right: env(safe-area-inset-right, 0px);
+}
+body { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+
+/* Prevent images from overflowing */
+img { max-width: 100%; height: auto; }
+
+/* Ensure nav doesn't overflow on any screen */
+nav { min-height: 60px; flex-wrap: nowrap; }
+
+/* Fix topbar on very small screens */
+@media(max-width:360px) {
+  .topbar { font-size:.52rem; padding:.3rem .4rem; letter-spacing:.5px; }
+  nav { padding:.2rem .7rem; }
+  .nlogo { width:38px; height:38px; }
+  .nbname { font-size:.72rem; }
+  .cbtn { padding:.4rem .6rem; font-size:.65rem; gap:.3rem; }
+  .ccount { width:14px; height:14px; font-size:.52rem; }
+  section { padding:1.2rem .6rem; }
+  .hero h1 { font-size:clamp(1.9rem,9.5vw,2.4rem) !important; }
+  .hero p { font-size:.78rem; }
+  .pgrid { grid-template-columns: repeat(2,1fr); gap:.4rem; }
+  .pimgwrap { height:110px; }
+  .pinfo { padding:.5rem .45rem; }
+  .pname { font-size:.68rem; line-height:1.3; }
+  .pprice { font-size:.88rem; }
+  .addbtn { padding:.28rem .4rem; font-size:.54rem; }
+  .cgrid { grid-template-columns: repeat(2,1fr); gap:.4rem; }
+  .ccard { padding:.7rem .4rem; }
+  .cico { font-size:1.4rem; margin-bottom:.3rem; }
+  .cname { font-size:.65rem; }
+  .csub { font-size:.52rem; }
+  .pbgrid { grid-template-columns: repeat(2,1fr); gap:.4rem; }
+  .hstats { gap:0; }
+  .snum { font-size:1.2rem; }
+  .slbl { font-size:.52rem; }
+  footer { padding:1.5rem .7rem 1.2rem; }
+  .ftop { gap:1.2rem; }
+  .fbot { padding-top:1.2rem; }
+  .tstrip { grid-template-columns: 1fr 1fr; gap:.5rem; padding:1rem .7rem; }
+  .tico { font-size:1.2rem; }
+  .ttitle { font-size:.72rem; }
+  .tdesc { font-size:.6rem; }
+  .at-section { padding:2.5rem .7rem; }
+  .at-title { font-size:1.6rem; }
+  .at-card { padding:1.2rem; }
+  .mBox { margin:.3rem; }
+  .chkbox { margin:.3rem; }
+}
+
+/* ── 320px (smallest iPhones / Android) ── */
+@media(max-width:320px) {
+  .hero h1 { font-size: clamp(1.7rem, 9vw, 2rem) !important; }
+  .pgrid { grid-template-columns: 1fr; }
+  .cgrid { grid-template-columns: repeat(2,1fr); }
+  .pbgrid { grid-template-columns: repeat(2,1fr); }
+  .pimgwrap { height:180px; }
+  .hcta a,.hcta .metal-wrap { max-width:100%; }
+}
+
+/* ── Large tablets (1024px-1100px) ── */
+@media(min-width:901px) and (max-width:1100px) {
+  .hero-inner { padding: 5rem 2rem 3rem; }
+  .hero h1 { font-size: clamp(2.4rem,3.8vw,4rem); }
+  .pgrid { grid-template-columns: repeat(auto-fill, minmax(220px,1fr)); }
+  .cgrid { grid-template-columns: repeat(4,1fr); }
+  .ftop { grid-template-columns: 1.5fr 1fr 1fr; }
+  .at-wrap { gap:3rem; }
+}
+
+/* ── iPad landscape / mid tablets (769px-900px) ── */
+@media(min-width:769px) and (max-width:900px) {
+  .hero-inner { padding: 4rem 2rem 2.5rem; gap:1rem; }
+  .pgrid { grid-template-columns: repeat(auto-fill, minmax(200px,1fr)); }
+  .cgrid { grid-template-columns: repeat(4,1fr); }
+  .ftop { grid-template-columns: 1fr 1fr; }
+  .hslide { padding:2.5rem 2rem; }
+}
+
+/* ── Fix horizontal overflow on ALL sizes ── */
+.hero, section, footer, .tstrip, .at-section, .mbar {
+  overflow-x: hidden;
+}
+.hero-inner, .at-wrap, .ftop {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* ── Fix floating badges on very small screens ── */
+@media(max-width:480px) {
+  .hp-badge-tl, .hp-badge-bl { left: -4px; }
+  .hp-badge-tr, .hp-badge-br { right: -4px; }
+  .hp-badge-title { font-size:.56rem; }
+  .hp-badge-sub { font-size:.48rem; }
+  .hp-badge { padding:.3rem .55rem; border-radius:8px; }
+  .hp-badge-ico { font-size:.9rem; }
+}
+@media(max-width:360px) {
+  .hp-badge { display:none; }
+}
+
+/* ── Fix search overlay on mobile ── */
+@media(max-width:768px) {
+  .srch-overlay { padding:.8rem; }
+  .srch-box { padding:1rem; border-radius:16px; }
+  .srch-top { flex-wrap:wrap; gap:.5rem; }
+  .srch-close { flex-shrink:0; }
+  .srch-results { grid-template-columns:repeat(2,1fr) !important; gap:.7rem; }
+  .srch-filters { flex-wrap:wrap; gap:.4rem; }
+}
+@media(max-width:480px) {
+  .srch-results { grid-template-columns:repeat(2,1fr) !important; gap:.5rem; }
+}
+@media(max-width:360px) {
+  .srch-results { grid-template-columns:1fr !important; }
+}
+
+/* ── Fix product modal on all sizes ── */
+@media(max-width:480px) {
+  .mOver { padding:.4rem; }
+  .mBox { border-radius:16px; max-height:94vh; }
+  .mLeft { min-height:120px; padding:1rem; }
+  .mLeft img { max-width:110px; max-height:110px; }
+  .mRight { padding:1rem; }
+  .mTitle { font-size:1.1rem; }
+  .mPrice { font-size:1.3rem; }
+  .mspecs { grid-template-columns:1fr 1fr; gap:.4rem; }
+  .mspec { padding:.4rem .5rem; }
+  .mspec-k { font-size:.6rem; }
+  .mspec-v { font-size:.72rem; }
+}
+
+/* ── Fix admin panel on mobile ── */
+@media(max-width:480px) {
+  .admPanel { height:100dvh; }
+  .admSide { max-height:35vh; }
+  .admKpis { grid-template-columns:1fr 1fr; gap:.5rem; }
+  .kpi { padding:.7rem .6rem; }
+  .kpi-num { font-size:1.2rem; }
+  .kpi-lbl { font-size:.62rem; }
+  .admTable table { min-width:400px; font-size:.75rem; }
+  .admHd { font-size:1rem; padding:.8rem 1rem; }
+  .addpform { padding:.8rem; }
+  .addpform .fgroup { margin-bottom:.8rem; }
+  .addpform input, .addpform select, .addpform textarea { font-size:.85rem; }
+}
+
+/* ── Cart sidebar ── */
+@media(max-width:360px) {
+  .cSide { width:100%; }
+}
+
+/* ── Trust strip: 1 col on very small ── */
+@media(max-width:320px) {
+  .tstrip { grid-template-columns:1fr; }
+}
+
+/* ── Brands row ── */
+@media(max-width:480px) {
+  .brow { gap:.35rem; }
+  .bchip { padding:.4rem .7rem; font-size:.7rem; letter-spacing:.5px; }
+}
+@media(max-width:360px) {
+  .bchip { padding:.35rem .55rem; font-size:.65rem; }
+}
+
+/* ── Featured slider ── */
+@media(max-width:480px) {
+  .hslider { border-radius:14px; }
+  .hslide { padding:1.4rem .9rem; gap:.8rem; }
+  .slide-title { font-size:1.35rem; line-height:1.15; }
+  .slide-desc { font-size:.8rem; line-height:1.6; margin-bottom:1rem; }
+  .slide-price { font-size:1.35rem; margin-bottom:1rem; }
+  .slide-img { max-width:130px; height:110px; }
+  .slnav { width:30px; height:30px; font-size:.95rem; }
+}
+@media(max-width:360px) {
+  .slide-img { max-width:110px; height:90px; }
+  .slide-title { font-size:1.15rem; }
+}
+
+/* ── Reviews / Testimonials ── */
+@media(max-width:480px) {
+  .at-rating-row { padding:.8rem 1rem; gap:.7rem; }
+  .at-big-num { font-size:2.2rem; }
+  .at-stars-row { font-size:.95rem; }
+  .at-rating-sub { font-size:.65rem; }
+}
+@media(max-width:360px) {
+  .at-right { min-height:380px; }
+  .at-card { padding:1rem; }
+  .at-quote-text { font-size:.8rem; }
+  .at-author-name { font-size:.8rem; }
+  .at-logos-row { gap:.6rem 1.2rem; }
+  .at-logos-row span { font-size:.85rem; }
+}
+
+/* ── dvh fix for hero on mobile browsers ── */
+@supports(height:100dvh) {
+  @media(max-width:768px) {
+    .hero { min-height:100dvh; }
+  }
+}
+
+/* ── Prevent table overflow ── */
+.admTable { -webkit-overflow-scrolling:touch; }
+
+/* ── WhatsApp button safe area ── */
+@media(max-width:768px) {
+  .wa { bottom:calc(1rem + var(--safe-bottom)); left:calc(1rem + var(--safe-left)); }
+}
+
+/* ── Fix price callout on small screens ── */
+@media(max-width:480px) {
+  .hero-price-callout { padding:.65rem 1rem; margin-bottom:1.2rem; }
+  .hpc-price { font-size:1.65rem; }
+  .hpc-label,.hpc-sub { font-size:.62rem; }
+}
+@media(max-width:360px) {
+  .hero-price-callout { padding:.55rem .8rem; }
+  .hpc-price { font-size:1.45rem; }
+}
+
+/* ── Fix filter bar overflow ── */
+.fbar { overflow-x:auto; -webkit-overflow-scrolling:touch; padding-bottom:4px; }
+@media(max-width:480px) {
+  .fbar { flex-wrap:nowrap; }
+  .fbtn { flex-shrink:0; }
+}
+
+/* ── Smooth scrolling on iOS ── */
+html { -webkit-overflow-scrolling:touch; }
+
+/* ── Fix touch targets for accessibility ── */
+@media(max-width:768px) {
+  .fbtn, .cbtn, .addbtn, .bgold, .bghost, .pwish { min-height:40px; }
+  .sldot { width:10px; height:10px; }
+  .at-dot { min-width:10px; min-height:10px; }
+}
+/* === COMPARE === */
+.cmp-fab{position:fixed;bottom:5.5rem;right:1.5rem;z-index:800;display:none;flex-direction:column;align-items:flex-end;gap:.45rem;}
+.cmp-fab.show{display:flex;}
+.cmp-tray{display:flex;gap:.35rem;flex-wrap:wrap;justify-content:flex-end;max-width:240px;}
+.cmp-chip{background:#fff;border:1.5px solid var(--gold);border-radius:9px;padding:.25rem .5rem;font-size:.6rem;font-weight:700;color:var(--navy-dark);display:flex;align-items:center;gap:.3rem;box-shadow:0 3px 10px rgba(212,160,23,.2);}
+.cmp-chip button{background:none;border:none;cursor:pointer;color:#dc2626;font-size:.72rem;padding:0;line-height:1;}
+.cmp-btn{background:linear-gradient(135deg,var(--navy),var(--navy-dark));color:var(--gold-light);border:none;border-radius:12px;padding:.7rem 1.3rem;font-family:'Montserrat',sans-serif;font-weight:800;font-size:.73rem;letter-spacing:1.5px;cursor:pointer;box-shadow:0 8px 22px rgba(26,43,92,.35);transition:all .25s;display:flex;align-items:center;gap:.55rem;white-space:nowrap;}
+.cmp-btn:hover{transform:translateY(-2px);box-shadow:0 14px 28px rgba(26,43,92,.45);}
+.cmp-badge-num{background:var(--gold);color:var(--navy-dark);border-radius:50%;width:21px;height:21px;display:inline-flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:900;flex-shrink:0;}
+.cmp-add-btn{position:absolute;bottom:.6rem;left:.6rem;background:rgba(26,43,92,.83);color:var(--gold-light);border:none;border-radius:7px;padding:.22rem .55rem;font-size:.57rem;font-weight:700;cursor:pointer;transition:all .2s;backdrop-filter:blur(6px);z-index:3;opacity:0;pointer-events:none;white-space:nowrap;}
+.pimgwrap:hover .cmp-add-btn{opacity:1;pointer-events:all;}
+.cmp-add-btn:hover{background:var(--navy-dark);}
+.cmp-add-btn.added{background:var(--gold);color:var(--navy-dark);}
+@media(max-width:768px){.cmp-add-btn{opacity:1;pointer-events:all;}}
+/* Compare overlay */
+.cmpOver{position:fixed;inset:0;background:rgba(0,0,0,.88);backdrop-filter:blur(14px);z-index:4000;opacity:0;pointer-events:none;transition:opacity .3s;display:flex;align-items:center;justify-content:center;padding:1rem;}
+.cmpOver.open{opacity:1;pointer-events:all;}
+.cmpBox{background:#fff;border-radius:22px;width:100%;max-width:1100px;max-height:93vh;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 40px 80px rgba(0,0,0,.55);border-top:4px solid var(--gold);}
+.cmpHead{display:flex;align-items:center;justify-content:space-between;padding:1.1rem 1.5rem;background:linear-gradient(135deg,var(--navy),var(--navy-dark));flex-shrink:0;}
+.cmpHead h2{font-family:'Playfair Display',serif;font-size:1.2rem;color:#fff;font-weight:900;margin:0;}
+.cmpClose{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);color:#fff;border-radius:8px;padding:.35rem .85rem;font-size:.73rem;font-weight:700;cursor:pointer;font-family:'Montserrat',sans-serif;transition:background .2s;}
+.cmpClose:hover{background:rgba(255,255,255,.25);}
+.cmpBody{overflow:auto;-webkit-overflow-scrolling:touch;flex:1;}
+.cmpTable{width:100%;border-collapse:collapse;}
+.cmpTable thead th{position:sticky;top:0;z-index:5;background:linear-gradient(160deg,#FFFBF0,#fff);border-bottom:2px solid rgba(212,160,23,.25);padding:1rem .85rem .75rem;text-align:center;vertical-align:bottom;min-width:160px;}
+.cmpTable thead th:first-child{text-align:left;background:#FAFAF5;min-width:110px;max-width:130px;}
+/* 3D card hover */
+.cmp-card-wrap{perspective:700px;display:block;}
+.cmp-card-3d{transition:transform .45s cubic-bezier(.23,1,.32,1);transform-style:preserve-3d;padding:.25rem;}
+.cmpTable thead th:hover .cmp-card-3d{transform:rotateY(13deg) rotateX(-5deg) scale(1.05);}
+.cmp-prod-img{width:88px;height:88px;object-fit:contain;mix-blend-mode:multiply;filter:drop-shadow(0 4px 12px rgba(26,43,92,.13));display:block;margin:0 auto .45rem;}
+.cmp-prod-name{font-family:'Playfair Display',serif;font-size:.87rem;font-weight:900;color:var(--navy-dark);line-height:1.25;margin-bottom:.12rem;}
+.cmp-prod-brand{font-size:.57rem;font-weight:700;letter-spacing:2px;color:var(--gold-dark);text-transform:uppercase;margin-bottom:.35rem;}
+.cmp-cart-btn{background:linear-gradient(135deg,var(--gold-light),var(--gold));color:#fff;border:none;border-radius:6px;padding:.3rem .65rem;font-size:.6rem;font-weight:800;cursor:pointer;margin-top:.35rem;width:100%;font-family:'Montserrat',sans-serif;transition:all .2s;}
+.cmp-cart-btn:hover{filter:brightness(1.07);transform:translateY(-1px);}
+.cmpTable tbody td{padding:.68rem .85rem;border-bottom:1px solid rgba(212,160,23,.1);text-align:center;font-size:.81rem;vertical-align:middle;word-break:break-word;}
+.cmpTable tbody td:first-child{font-weight:700;font-size:.63rem;letter-spacing:.8px;color:var(--muted);text-transform:uppercase;text-align:left;background:#FAFAF5;border-right:1px solid rgba(212,160,23,.1);}
+.cmpTable tbody tr:nth-child(even) td{background:#FAFAF8;}
+.cmpTable tbody tr:nth-child(even) td:first-child{background:#F0ECE2;}
+.cmpTable tbody tr:hover td{background:rgba(212,160,23,.07)!important;}
+.cmpTable tbody tr:hover td:first-child{background:rgba(212,160,23,.12)!important;}
+.cmp-price-cell{font-family:'Oswald',sans-serif;font-size:1.12rem;font-weight:700;color:var(--gold-dark);}
+.cmp-price-cell.best{color:#16a34a;}
+.cmp-price-cell.worst{color:#dc2626;}
+.cmpBtnRow{padding:.85rem 1.3rem;border-top:1px solid rgba(212,160,23,.15);display:flex;gap:.55rem;flex-wrap:wrap;justify-content:center;background:linear-gradient(135deg,var(--gold-wash),#fff);flex-shrink:0;}
+@media(max-width:600px){
+  .cmpBox{border-radius:14px;max-height:97vh;}
+  .cmpHead{padding:.7rem .9rem;}
+  .cmpHead h2{font-size:.92rem;}
+  .cmpTable thead th,.cmpTable tbody td{padding:.48rem .42rem;font-size:.7rem;}
+  .cmpTable thead th:first-child{min-width:80px;}
+  .cmp-prod-img{width:56px;height:56px;}
+  .cmp-prod-name{font-size:.73rem;}
+  .cmp-fab{bottom:4.5rem;right:.8rem;}
+}
+/* === STOCK === */
+.pstock{display:inline-flex;align-items:center;gap:.28rem;font-size:.61rem;font-weight:700;border-radius:100px;padding:.16rem .52rem;margin-bottom:.32rem;}
+.pstock.in{background:#dcfce7;color:#16a34a;}
+.pstock.low{background:#fef9c3;color:#b45309;animation:stockPulse 1.8s ease-in-out infinite;}
+.pstock.out{background:#fee2e2;color:#dc2626;}
+.pstock .sdot{width:5px;height:5px;border-radius:50%;background:currentColor;flex-shrink:0;}
+@keyframes stockPulse{0%,100%{opacity:1;}50%{opacity:.55;}}
+/* === CONDITION (card) === */
+.pcond{font-size:.57rem;font-weight:700;letter-spacing:.9px;color:var(--gold-dark);background:rgba(212,160,23,.1);border:1px solid rgba(212,160,23,.25);border-radius:4px;padding:.09rem .38rem;display:inline-block;margin-bottom:.28rem;}
+/* === CONDITION (modal) === */
+.mCondBlock{background:linear-gradient(135deg,rgba(212,160,23,.07),rgba(212,160,23,.03));border:1.5px solid rgba(212,160,23,.2);border-radius:11px;padding:.8rem .95rem;margin-bottom:.85rem;}
+.mCondTitle{font-size:.61rem;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--navy);margin-bottom:.5rem;}
+.mCondGrid{display:grid;grid-template-columns:1fr 1fr;gap:.45rem;}
+.mCondItem{display:flex;flex-direction:column;gap:.1rem;}
+.mCondKey{font-size:.57rem;font-weight:600;letter-spacing:.9px;text-transform:uppercase;color:var(--muted);}
+.mCondVal{font-size:.79rem;font-weight:700;color:var(--text);}
+.mBattBar{height:5px;border-radius:3px;background:rgba(212,160,23,.15);margin-top:.18rem;overflow:hidden;}
+.mBattFill{height:100%;border-radius:3px;background:linear-gradient(90deg,#16a34a,#4ade80);transition:width .8s cubic-bezier(.23,1,.32,1);}
+.mBattFill.med{background:linear-gradient(90deg,#d97706,#fbbf24);}
+.mBattFill.low{background:linear-gradient(90deg,#dc2626,#f87171);}
+.mBoxRow{display:flex;flex-wrap:wrap;gap:.28rem;margin-top:.38rem;}
+.mBoxTag{font-size:.59rem;font-weight:600;background:#fff;border:1px solid rgba(212,160,23,.22);border-radius:5px;padding:.15rem .45rem;color:var(--text);}
+.mModalStock{display:inline-flex;align-items:center;gap:.32rem;font-size:.69rem;font-weight:700;border-radius:100px;padding:.2rem .65rem;margin-bottom:.5rem;}
+.mModalStock.in{background:#dcfce7;color:#16a34a;}
+.mModalStock.low{background:#fef9c3;color:#b45309;}
+.mModalStock.out{background:#fee2e2;color:#dc2626;}
+.mModalStock .sdot{width:5px;height:5px;border-radius:50%;background:currentColor;flex-shrink:0;}
+/* === AUTO-SWIPE PROGRESS === */
+
+
 </style>
 </head>
 <body>
@@ -1499,7 +1858,7 @@ footer{background:#fff;border-top:3px solid var(--gold);padding:3.5rem 2.5rem 2r
   <div class="scroll-inner">
     <div class="scroll-header" id="scrollHeader">
       <span class="eye">&#10022; Premium Experience</span>
-      <h2>Discover Our <em>Most Wanted</em><br/>Gadgets of 2025</h2>
+      <h2>Discover Our <em>Most Wanted</em><br/>Gadgets of 2026</h2>
       <p>Hand-picked flagship devices at prices that beat any competitor — authentic, warranted, and delivered to your door.</p>
     </div>
     <div class="scroll-card" id="scrollCard">
@@ -1536,7 +1895,7 @@ footer{background:#fff;border-top:3px solid var(--gold);padding:3.5rem 2.5rem 2r
 </section>
 
 <section id="phones" style="background:#fff;padding-top:2rem;">
-  <div class="shead"><div><span class="eye">Latest 2025 Models</span><h2 class="stitle">Smart<span>phones</span></h2></div></div>
+  <div class="shead"><div><span class="eye">Latest 2026 Models</span><h2 class="stitle">Smart<span>phones</span></h2></div></div>
 
   <div class="fbar" id="pfbar">
     <button class="fbtn act" onclick="setPhoneFilter('all',this)">All Phones</button>
@@ -1661,7 +2020,7 @@ footer{background:#fff;border-top:3px solid var(--gold);padding:3.5rem 2.5rem 2r
     <div class="fcol"><h4>Company</h4><ul><li><a href="#">About Us</a></li><li><a href="#">Careers</a></li><li><a href="#">Blog</a></li><li><a href="#">Privacy</a></li><li><a href="#">Terms</a></li></ul></div>
   </div>
   <div class="fbot">
-    <div class="fcopy">&copy; 2025 Blessed Joe Best Gadgets. All rights reserved.</div>
+    <div class="fcopy">&copy; 2026 Blessed Joe Best Gadgets. All rights reserved.</div>
     <div class="fsocs"><a class="fsoc" href="#">X</a><a class="fsoc" href="#">in</a><a class="fsoc" href="#">ig</a><a class="fsoc" href="#">fb</a></div>
   </div>
 </footer>
@@ -1754,6 +2113,8 @@ footer{background:#fff;border-top:3px solid var(--gold);padding:3.5rem 2.5rem 2r
         </div>
         <span class="mQtyTotal" id="mQtyTotal"></span>
       </div>
+      <div id="mStockBadge" class="mModalStock in" style="display:inline-flex;"></div>
+      <div id="mCondSection"></div>
       <p class="mDesc" id="mDesc"></p>
       <div class="mSpecs"><h4>Specifications</h4><div id="mSpecs"></div></div>
       <div class="mRevs"><h4>Customer Reviews</h4><div id="mRevs"></div></div>
@@ -1827,7 +2188,7 @@ footer{background:#fff;border-top:3px solid var(--gold);padding:3.5rem 2.5rem 2r
         <div class="kpi"><div class="kpi-num" id="kpiProds">16</div><div class="kpi-lbl">Products Listed</div><div class="kpi-delta">&#8593; 3 new this month</div></div>
         <div class="kpi"><div class="kpi-num">4.9&#9733;</div><div class="kpi-lbl">Avg. Rating</div><div class="kpi-delta">12K+ reviews</div></div>
       </div>
-      <div class="chartbar-wrap"><h3>Monthly Sales 2025</h3><div class="barchart" id="barChart"></div><div style="display:flex;gap:.5rem;margin-top:.3rem;" id="barLabels"></div></div>
+      <div class="chartbar-wrap"><h3>Monthly Sales 2026</h3><div class="barchart" id="barChart"></div><div style="display:flex;gap:.5rem;margin-top:.3rem;" id="barLabels"></div></div>
       <div class="admTable"><table style="width:100%;border-collapse:collapse;"><thead class="admTHead"><tr><th>Order</th><th>Customer</th><th>Items</th><th>Amount</th><th>Status</th></tr></thead><tbody class="admTBody" id="recentOrders"></tbody></table></div>
     </div>
     <div class="admPage" id="admProds">
@@ -1871,298 +2232,298 @@ var LOGO='data:image/png;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUA
 var allProducts = [
   // ── APPLE iPHONES ──
   {id:101,name:"iPhone 16",brand:"Apple",brandKey:"apple",icon:"📱",
-   imgs:["https://pngimg.com/uploads/iphone16/iphone16_PNG7.png","https://pngimg.com/uploads/iphone16/iphone16_PNG8.png"],
+   imgs: ["asset/iphone 16 pro max.png", "asset/iphone 16 pro max 2.png"],
    price:1318350,old:1484850,badge:"hot",category:"phone",rating:4.8,reviews:1876,
    specs:{"Display":"6.1\" Super Retina XDR","Chip":"A18","Camera":"48MP Dual","Condition":"Grade A UK Used","Storage":"128GB/256GB"},
    desc:"Grade A UK used iPhone 16. A18 chip, 48MP camera, all-day battery. Fully tested & verified."},
 
   {id:102,name:"iPhone 16 Plus",brand:"Apple",brandKey:"apple",icon:"📱",
-   imgs:["https://pngimg.com/uploads/iphone16/iphone16_PNG9.png","https://pngimg.com/uploads/iphone16/iphone16_PNG10.png"],
+   imgs:["asset/iphone 16 plus.png","asset/iphone 16 plus 2.png"],
    price:1484850,old:1648350,badge:"hot",category:"phone",rating:4.8,reviews:987,
    specs:{"Display":"6.7\" Super Retina XDR","Chip":"A18","Camera":"48MP Dual","Condition":"Grade A UK Used","Battery":"4685mAh"},
    desc:"Grade A UK used iPhone 16 Plus. Bigger screen, bigger battery, same flagship A18 power."},
 
   {id:103,name:"iPhone 16 Pro",brand:"Apple",brandKey:"apple",icon:"📱",
-   imgs:["https://pngimg.com/uploads/iphone16/iphone16_PNG13.png","https://pngimg.com/uploads/iphone16/iphone16_PNG14.png"],
+   imgs:["asset/iphone 16 pro.png","asset/iphone 16 pro 2.png"],
    price:1648350,old:1814850,badge:"hot",category:"phone",rating:4.9,reviews:3201,
    specs:{"Display":"6.3\" Super Retina XDR","Chip":"A18 Pro","Camera":"48MP Triple","Condition":"Grade A UK Used","Storage":"128GB–1TB"},
    desc:"Grade A UK used iPhone 16 Pro. Titanium body, A18 Pro chip, pro camera system."},
 
   {id:104,name:"iPhone 16 Pro Max",brand:"Apple",brandKey:"apple",icon:"📱",
-   imgs:["https://pngimg.com/uploads/iphone16/iphone16_PNG19.png","https://pngimg.com/uploads/iphone16/iphone16_PNG20.png"],
+   imgs:["asset/iphone 16 pro max.png","asset/iphone 16 pro max 2.png"],
    price:1979850,old:2143350,badge:"new",category:"phone",rating:4.9,reviews:2841,
    specs:{"Display":"6.9\" Super Retina XDR","Chip":"A18 Pro","Camera":"200MP Triple","Condition":"Grade A UK Used","Storage":"256GB–1TB"},
    desc:"Grade A UK used iPhone 16 Pro Max. The ultimate iPhone — titanium, A18 Pro, 5x zoom."},
 
   {id:105,name:"iPhone 16e",brand:"Apple",brandKey:"apple",icon:"📱",
-   imgs:["https://pngimg.com/uploads/iphone16/iphone16_PNG7.png","https://pngimg.com/uploads/iphone16/iphone16_PNG8.png"],
+   imgs:["asset/iphone 16 e.png","asset/iphone 16 e 2.png"],
    price:989850,old:1152350,badge:"sale",category:"phone",rating:4.7,reviews:654,
    specs:{"Display":"6.1\" OLED","Chip":"A16","Camera":"48MP","Condition":"Grade A UK Used","Storage":"128GB/256GB"},
    desc:"Grade A UK used iPhone 16e. Affordable entry into the iPhone 16 family with A16 Bionic."},
 
   {id:106,name:"iPhone 17",brand:"Apple",brandKey:"apple",icon:"📱",
-   imgs:["https://pngimg.com/uploads/iphone16/iphone16_PNG7.png","https://pngimg.com/uploads/iphone16/iphone16_PNG9.png"],
+   imgs:["asset/iphone 17.png","asset/iphone 17 2.png"],
    price:1648350,old:1814850,badge:"new",category:"phone",rating:5.0,reviews:213,
    specs:{"Display":"6.1\" Super Retina XDR","Chip":"A19","Camera":"48MP Dual","Condition":"Grade A UK Used","Storage":"128GB–512GB"},
    desc:"Grade A UK used iPhone 17. Next-gen A19 chip, upgraded camera, refined aluminium design."},
 
   {id:107,name:"iPhone 17 Air",brand:"Apple",brandKey:"apple",icon:"📱",
-   imgs:["https://pngimg.com/uploads/iphone16/iphone16_PNG8.png","https://pngimg.com/uploads/iphone16/iphone16_PNG10.png"],
+   imgs:["asset/iphone 17 air.png","asset/iphone 17 air 2.png"],
    price:1814850,old:1979850,badge:"new",category:"phone",rating:5.0,reviews:98,
    specs:{"Display":"6.6\" Super Retina XDR","Chip":"A19","Camera":"48MP","Condition":"Grade A UK Used","Thickness":"5.5mm"},
    desc:"Grade A UK used iPhone 17 Air. Insanely thin at 5.5mm — Apple's most portable iPhone yet."},
 
   {id:108,name:"iPhone 17 Pro",brand:"Apple",brandKey:"apple",icon:"📱",
-   imgs:["https://pngimg.com/uploads/iphone16/iphone16_PNG13.png","https://pngimg.com/uploads/iphone16/iphone16_PNG15.png"],
+   imgs:["asset/iphone 17 pro.png","asset/iphone 17 pro 2.png"],
    price:2143350,old:2309850,badge:"new",category:"phone",rating:5.0,reviews:187,
    specs:{"Display":"6.3\" ProMotion OLED","Chip":"A19 Pro","Camera":"48MP Triple","Condition":"Grade A UK Used","Storage":"256GB–1TB"},
    desc:"Grade A UK used iPhone 17 Pro. A19 Pro chip, titanium frame, revolutionary camera system."},
 
   {id:109,name:"iPhone 17 Pro Max",brand:"Apple",brandKey:"apple",icon:"📱",
-   imgs:["https://pngimg.com/uploads/iphone16/iphone16_PNG19.png","https://pngimg.com/uploads/iphone16/iphone16_PNG21.png"],
+   imgs:["asset/iphone 17 pro max.png","asset/iphone 17 pro max.png"],
    price:2309850,old:2559850,badge:"new",category:"phone",rating:5.0,reviews:312,
    specs:{"Display":"6.9\" ProMotion OLED","Chip":"A19 Pro","Camera":"48MP Quad","Condition":"Grade A UK Used","Storage":"256GB–2TB"},
    desc:"Grade A UK used iPhone 17 Pro Max. The pinnacle of iPhone — A19 Pro, quad camera, titanium."},
 
   {id:110,name:"iPhone 17e",brand:"Apple",brandKey:"apple",icon:"📱",
-   imgs:["https://pngimg.com/uploads/iphone16/iphone16_PNG7.png","https://pngimg.com/uploads/iphone16/iphone16_PNG8.png"],
+   imgs:["asset/iphone 17"],
    price:1152350,old:1318350,badge:"sale",category:"phone",rating:4.7,reviews:145,
    specs:{"Display":"6.1\" OLED","Chip":"A18","Camera":"48MP","Condition":"Grade A UK Used","Storage":"128GB/256GB"},
    desc:"Grade A UK used iPhone 17e. Compact, affordable iPhone 17 family entry with A18 chip."},
 
   // ── SAMSUNG GALAXY ──
   {id:201,name:"Samsung Galaxy S24",brand:"Samsung",brandKey:"samsung",icon:"📱",
-   imgs:["https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?w=600&h=700&fit=crop&q=85","https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?w=600&h=700&fit=crop&q=85"],
+   imgs:["https://images.samsung.com/is/image/samsung/p6pim/uk/2401/gallery/uk-galaxy-s24-s921-sm-s921bzgdbtu-thumb-539553570?$650_519_PNG$","https://images.samsung.com/is/image/samsung/p6pim/uk/2401/gallery/uk-galaxy-s24-s921-sm-s921bzkdbtu-thumb-539553567?$650_519_PNG$"],
    price:989850,old:1152350,badge:"sale",category:"phone",rating:4.7,reviews:1234,
    specs:{"Display":"6.2\" Dynamic AMOLED 2X","Chip":"Snapdragon 8 Gen 3","Camera":"50MP Triple","Condition":"Grade A UK Used","Storage":"128GB/256GB"},
    desc:"Grade A UK used Galaxy S24. Snapdragon 8 Gen 3, stunning AMOLED display, Galaxy AI."},
 
   {id:202,name:"Samsung Galaxy S24+",brand:"Samsung",brandKey:"samsung",icon:"📱",
-   imgs:["https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?w=600&h=700&fit=crop&q=85","https://images.unsplash.com/photo-1565849904461-04a58ad377e0?w=600&h=700&fit=crop&q=85"],
+   imgs:["https://images.samsung.com/is/image/samsung/p6pim/uk/2401/gallery/uk-galaxy-s24-s926-sm-s926bzgdbtu-thumb-539553582?$650_519_PNG$","https://images.samsung.com/is/image/samsung/p6pim/uk/2401/gallery/uk-galaxy-s24-s926-sm-s926bzkdbtu-thumb-539553579?$650_519_PNG$"],
    price:1152350,old:1318350,badge:"sale",category:"phone",rating:4.7,reviews:876,
    specs:{"Display":"6.7\" Dynamic AMOLED 2X","Chip":"Snapdragon 8 Gen 3","Camera":"50MP Triple","Condition":"Grade A UK Used","Battery":"4900mAh"},
    desc:"Grade A UK used Galaxy S24+. Bigger display, bigger battery, same flagship performance."},
 
   {id:203,name:"Samsung Galaxy S24 Ultra",brand:"Samsung",brandKey:"samsung",icon:"📱",
-   imgs:["https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?w=600&h=700&fit=crop&q=85","https://images.unsplash.com/photo-1565849904461-04a58ad377e0?w=600&h=700&fit=crop&q=85"],
+   imgs:["https://images.samsung.com/is/image/samsung/p6pim/uk/2401/gallery/uk-galaxy-s24-ultra-s928-sm-s928bzkgbtu-thumb-539553595?$650_519_PNG$","https://images.samsung.com/is/image/samsung/p6pim/uk/2401/gallery/uk-galaxy-s24-ultra-s928-sm-s928bztgbtu-thumb-539553598?$650_519_PNG$"],
    price:1648350,old:1814850,badge:"hot",category:"phone",rating:4.8,reviews:2100,
    specs:{"Display":"6.8\" QHD+ AMOLED","Chip":"Snapdragon 8 Gen 3","Camera":"200MP Quad","Condition":"Grade A UK Used","S Pen":"Built-in"},
    desc:"Grade A UK used Galaxy S24 Ultra. 200MP camera, built-in S Pen, titanium frame."},
 
   {id:204,name:"Samsung Galaxy Z Fold6",brand:"Samsung",brandKey:"samsung",icon:"📲",
-   imgs:["https://images.unsplash.com/photo-1610945264803-c22b62d2a7b3?w=600&h=700&fit=crop&q=85","https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?w=600&h=700&fit=crop&q=85"],
+   imgs:["https://images.samsung.com/is/image/samsung/p6pim/uk/2407/gallery/uk-galaxy-z-fold6-f956-sm-f956bzkabtu-thumb-541808536?$650_519_PNG$","https://images.samsung.com/is/image/samsung/p6pim/uk/2407/gallery/uk-galaxy-z-fold6-f956-sm-f956bzaabtu-thumb-541808539?$650_519_PNG$"],
    price:2309850,old:2639850,badge:"hot",category:"phone",rating:4.7,reviews:543,
    specs:{"Display":"7.6\" Foldable AMOLED","Chip":"Snapdragon 8 Gen 3","Camera":"50MP Triple","Condition":"Grade A UK Used","Hinge":"FlexHinge"},
    desc:"Grade A UK used Galaxy Z Fold6. Unfold into a full tablet experience — powered by Galaxy AI."},
 
   {id:205,name:"Samsung Galaxy Z Flip6",brand:"Samsung",brandKey:"samsung",icon:"📲",
-   imgs:["https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?w=600&h=700&fit=crop&q=85","https://images.unsplash.com/photo-1610945264803-c22b62d2a7b3?w=600&h=700&fit=crop&q=85"],
+   imgs:["https://images.samsung.com/is/image/samsung/p6pim/uk/2407/gallery/uk-galaxy-z-flip6-f741-sm-f741bzkabtu-thumb-541808524?$650_519_PNG$","https://images.samsung.com/is/image/samsung/p6pim/uk/2407/gallery/uk-galaxy-z-flip6-f741-sm-f741bzaabtu-thumb-541808527?$650_519_PNG$"],
    price:1318350,old:1484850,badge:"hot",category:"phone",rating:4.6,reviews:765,
    specs:{"Display":"6.7\" Foldable AMOLED","Chip":"Snapdragon 8 Gen 3","Camera":"50MP Dual","Condition":"Grade A UK Used","Cover Screen":"3.4\""},
    desc:"Grade A UK used Galaxy Z Flip6. Iconic flip design meets flagship power and Galaxy AI."},
 
   {id:206,name:"Samsung Galaxy S25",brand:"Samsung",brandKey:"samsung",icon:"📱",
-   imgs:["https://images.unsplash.com/photo-1565849904461-04a58ad377e0?w=600&h=700&fit=crop&q=85","https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?w=600&h=700&fit=crop&q=85"],
+   imgs:["https://images.samsung.com/is/image/samsung/p6pim/uk/2501/gallery/uk-galaxy-s25-s931-sm-s931bzkgbtu-thumb-544315760?$650_519_PNG$","https://images.samsung.com/is/image/samsung/p6pim/uk/2501/gallery/uk-galaxy-s25-s931-sm-s931bzagbtu-thumb-544315763?$650_519_PNG$"],
    price:1152350,old:1318350,badge:"new",category:"phone",rating:4.8,reviews:890,
    specs:{"Display":"6.2\" Dynamic AMOLED 2X","Chip":"Snapdragon 8 Elite","Camera":"50MP Triple","Condition":"Grade A UK Used","Storage":"128GB/256GB"},
    desc:"Grade A UK used Galaxy S25. Snapdragon 8 Elite, refined design, powerful Galaxy AI."},
 
   {id:207,name:"Samsung Galaxy S25+",brand:"Samsung",brandKey:"samsung",icon:"📱",
-   imgs:["https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?w=600&h=700&fit=crop&q=85","https://images.unsplash.com/photo-1565849904461-04a58ad377e0?w=600&h=700&fit=crop&q=85"],
+   imgs:["https://images.samsung.com/is/image/samsung/p6pim/uk/2501/gallery/uk-galaxy-s25-s936-sm-s936bzkgbtu-thumb-544315773?$650_519_PNG$","https://images.samsung.com/is/image/samsung/p6pim/uk/2501/gallery/uk-galaxy-s25-s936-sm-s936bzagbtu-thumb-544315776?$650_519_PNG$"],
    price:1648350,old:1814850,badge:"new",category:"phone",rating:4.8,reviews:654,
    specs:{"Display":"6.7\" Dynamic AMOLED 2X","Chip":"Snapdragon 8 Elite","Camera":"50MP Triple","Condition":"Grade A UK Used","Battery":"4900mAh"},
    desc:"Grade A UK used Galaxy S25+. More screen, more battery, all the Galaxy AI you need."},
 
   {id:208,name:"Samsung Galaxy S25 Edge",brand:"Samsung",brandKey:"samsung",icon:"📱",
-   imgs:["https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?w=600&h=700&fit=crop&q=85","https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?w=600&h=700&fit=crop&q=85"],
+   imgs:["https://images.samsung.com/is/image/samsung/p6pim/uk/2501/gallery/uk-galaxy-s25-s931-sm-s931bzpgbtu-thumb-544315757?$650_519_PNG$","https://images.samsung.com/is/image/samsung/p6pim/uk/2501/gallery/uk-galaxy-s25-s931-sm-s931bzkgbtu-thumb-544315760?$650_519_PNG$"],
    price:1814850,old:1979850,badge:"new",category:"phone",rating:4.8,reviews:321,
    specs:{"Display":"6.7\" Curved AMOLED 2X","Chip":"Snapdragon 8 Elite","Camera":"200MP Triple","Condition":"Grade A UK Used","Thickness":"6.7mm"},
    desc:"Grade A UK used Galaxy S25 Edge. Ultra-slim curved design with flagship specs."},
 
   {id:209,name:"Samsung Galaxy S25 Ultra",brand:"Samsung",brandKey:"samsung",icon:"📱",
-   imgs:["https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?w=600&h=700&fit=crop&q=85","https://images.unsplash.com/photo-1565849904461-04a58ad377e0?w=600&h=700&fit=crop&q=85"],
+   imgs:["https://images.samsung.com/is/image/samsung/p6pim/uk/2501/gallery/uk-galaxy-s25-ultra-s938-sm-s938bzkgbtu-thumb-544315790?$650_519_PNG$","https://images.samsung.com/is/image/samsung/p6pim/uk/2501/gallery/uk-galaxy-s25-ultra-s938-sm-s938bzwgbtu-thumb-544315793?$650_519_PNG$"],
    price:2143350,old:2309850,badge:"hot",category:"phone",rating:4.9,reviews:1876,
    specs:{"Display":"6.9\" QHD+ AMOLED","Chip":"Snapdragon 8 Elite","Camera":"200MP Quad","Condition":"Grade A UK Used","S Pen":"Built-in"},
    desc:"Grade A UK used Galaxy S25 Ultra. The ultimate Android — 200MP, S Pen, Snapdragon 8 Elite."},
 
   {id:210,name:"Samsung Galaxy Z Fold7",brand:"Samsung",brandKey:"samsung",icon:"📲",
-   imgs:["https://images.unsplash.com/photo-1610945264803-c22b62d2a7b3?w=600&h=700&fit=crop&q=85","https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?w=600&h=700&fit=crop&q=85"],
+   imgs:["https://images.samsung.com/is/image/samsung/p6pim/uk/2407/gallery/uk-galaxy-z-fold6-f956-sm-f956bzaabtu-thumb-541808539?$650_519_PNG$","https://images.samsung.com/is/image/samsung/p6pim/uk/2407/gallery/uk-galaxy-z-fold6-f956-sm-f956bzkabtu-thumb-541808536?$650_519_PNG$"],
    price:2639850,old:2969850,badge:"new",category:"phone",rating:4.8,reviews:210,
    specs:{"Display":"7.9\" Foldable AMOLED","Chip":"Snapdragon 8 Gen 4","Camera":"200MP Triple","Condition":"Grade A UK Used","Hinge":"FlexHinge 2.0"},
    desc:"Grade A UK used Galaxy Z Fold7. Next-gen foldable with thinner build and 200MP main camera."},
 
   {id:211,name:"Samsung Galaxy Z Flip7",brand:"Samsung",brandKey:"samsung",icon:"📲",
-   imgs:["https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?w=600&h=700&fit=crop&q=85","https://images.unsplash.com/photo-1610945264803-c22b62d2a7b3?w=600&h=700&fit=crop&q=85"],
+   imgs:["https://images.samsung.com/is/image/samsung/p6pim/uk/2407/gallery/uk-galaxy-z-flip6-f741-sm-f741bzaabtu-thumb-541808527?$650_519_PNG$","https://images.samsung.com/is/image/samsung/p6pim/uk/2407/gallery/uk-galaxy-z-flip6-f741-sm-f741bzkabtu-thumb-541808524?$650_519_PNG$"],
    price:1484850,old:1648350,badge:"new",category:"phone",rating:4.7,reviews:432,
    specs:{"Display":"6.9\" Foldable AMOLED","Chip":"Snapdragon 8 Gen 4","Camera":"50MP Dual","Condition":"Grade A UK Used","Cover Screen":"4\""},
    desc:"Grade A UK used Galaxy Z Flip7. Bigger cover screen, slimmer hinge, all-new AI features."},
 
   {id:212,name:"Samsung Galaxy S26",brand:"Samsung",brandKey:"samsung",icon:"📱",
-   imgs:["https://images.unsplash.com/photo-1565849904461-04a58ad377e0?w=600&h=700&fit=crop&q=85","https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?w=600&h=700&fit=crop&q=85"],
+   imgs:["https://images.samsung.com/is/image/samsung/p6pim/uk/2501/gallery/uk-galaxy-s25-s931-sm-s931bzagbtu-thumb-544315763?$650_519_PNG$","https://images.samsung.com/is/image/samsung/p6pim/uk/2501/gallery/uk-galaxy-s25-s931-sm-s931bzkgbtu-thumb-544315760?$650_519_PNG$"],
    price:1318350,old:1484850,badge:"new",category:"phone",rating:5.0,reviews:87,
    specs:{"Display":"6.2\" Dynamic AMOLED 2X","Chip":"Snapdragon 8 Gen 4","Camera":"50MP Triple","Condition":"Grade A UK Used","Storage":"128GB/256GB"},
    desc:"Grade A UK used Galaxy S26. Snapdragon 8 Gen 4, refined compact design, next-gen Galaxy AI."},
 
   {id:213,name:"Samsung Galaxy S26 Edge",brand:"Samsung",brandKey:"samsung",icon:"📱",
-   imgs:["https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?w=600&h=700&fit=crop&q=85","https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?w=600&h=700&fit=crop&q=85"],
+   imgs:["https://images.samsung.com/is/image/samsung/p6pim/uk/2501/gallery/uk-galaxy-s25-s936-sm-s936bzagbtu-thumb-544315776?$650_519_PNG$","https://images.samsung.com/is/image/samsung/p6pim/uk/2501/gallery/uk-galaxy-s25-s936-sm-s936bzkgbtu-thumb-544315773?$650_519_PNG$"],
    price:1979850,old:2143350,badge:"new",category:"phone",rating:5.0,reviews:64,
    specs:{"Display":"6.7\" Curved AMOLED 2X","Chip":"Snapdragon 8 Gen 4","Camera":"200MP Triple","Condition":"Grade A UK Used","Thickness":"6.4mm"},
    desc:"Grade A UK used Galaxy S26 Edge. The thinnest Galaxy flagship — curved display, 200MP camera."},
 
   {id:214,name:"Samsung Galaxy S26 Ultra",brand:"Samsung",brandKey:"samsung",icon:"📱",
-   imgs:["https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?w=600&h=700&fit=crop&q=85","https://images.unsplash.com/photo-1565849904461-04a58ad377e0?w=600&h=700&fit=crop&q=85"],
+   imgs:["https://images.samsung.com/is/image/samsung/p6pim/uk/2501/gallery/uk-galaxy-s25-ultra-s938-sm-s938bzwgbtu-thumb-544315793?$650_519_PNG$","https://images.samsung.com/is/image/samsung/p6pim/uk/2501/gallery/uk-galaxy-s25-ultra-s938-sm-s938bzkgbtu-thumb-544315790?$650_519_PNG$"],
    price:2639850,old:2969850,badge:"new",category:"phone",rating:5.0,reviews:128,
    specs:{"Display":"6.9\" QHD+ AMOLED","Chip":"Snapdragon 8 Gen 4","Camera":"200MP Penta","Condition":"Grade A UK Used","S Pen":"Built-in"},
    desc:"Grade A UK used Galaxy S26 Ultra. Snapdragon 8 Gen 4, 200MP penta-camera, S Pen, AI everything."},
 
   // ── GOOGLE PIXEL ──
   {id:301,name:"Google Pixel 8a",brand:"Google",brandKey:"google",icon:"📱",
-   imgs:["https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=600&h=700&fit=crop&q=85","https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=600&h=700&fit=crop&q=85"],
+   imgs:["https://lh3.googleusercontent.com/6A9lFYkIhGGNjLJL3bMvNwxVrEJrJFhWo_akxFKXNfCN9gv3bFWl7a8g7IKhkU5-3A=w800","https://lh3.googleusercontent.com/6A9lFYkIhGGNjLJL3bMvNwxVrEJrJFhWo_akxFKXNfCN9gv3bFWl7a8g7IKhkU5-3A=w400"],
    price:824850,old:989850,badge:"sale",category:"phone",rating:4.6,reviews:765,
    specs:{"Display":"6.1\" OLED","Chip":"Tensor G3","Camera":"64MP Dual","Condition":"Grade A UK Used","Battery":"4500mAh"},
    desc:"Grade A UK used Pixel 8a. Google AI smarts, great camera, affordable price."},
 
   {id:302,name:"Google Pixel 9",brand:"Google",brandKey:"google",icon:"📱",
-   imgs:["https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=600&h=700&fit=crop&q=85","https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=600&h=700&fit=crop&q=85"],
+   imgs:["https://lh3.googleusercontent.com/OlKE_YtEJjjUCxXJZ0IwXTqm0J6YvArx7u7VcpjO6Xt0FdF6V3kP7Y9eZ4yH2A=w800","https://lh3.googleusercontent.com/OlKE_YtEJjjUCxXJZ0IwXTqm0J6YvArx7u7VcpjO6Xt0FdF6V3kP7Y9eZ4yH2A=w400"],
    price:1152350,old:1318350,badge:"hot",category:"phone",rating:4.7,reviews:987,
    specs:{"Display":"6.3\" OLED","Chip":"Tensor G4","Camera":"50MP Dual","Condition":"Grade A UK Used","Storage":"128GB/256GB"},
    desc:"Grade A UK used Pixel 9. Tensor G4, flagship AI, clean Android experience."},
 
   {id:303,name:"Google Pixel 9 Pro",brand:"Google",brandKey:"google",icon:"📱",
-   imgs:["https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=600&h=700&fit=crop&q=85","https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=600&h=700&fit=crop&q=85"],
+   imgs:["https://lh3.googleusercontent.com/KyZFD7k5xNHf3WQi7a2KbLl5kQdQw0-qV8yoEPm9P6xHTG3Yj8y7m5nZ6vR2wA=w800","https://lh3.googleusercontent.com/KyZFD7k5xNHf3WQi7a2KbLl5kQdQw0-qV8yoEPm9P6xHTG3Yj8y7m5nZ6vR2wA=w400"],
    price:1484850,old:1648350,badge:"hot",category:"phone",rating:4.8,reviews:1120,
    specs:{"Display":"6.3\" LTPO OLED","Chip":"Tensor G4","Camera":"50MP Triple","Condition":"Grade A UK Used","Storage":"128GB–1TB"},
    desc:"Grade A UK used Pixel 9 Pro. Pro camera system, advanced AI, stunning LTPO display."},
 
   {id:304,name:"Google Pixel 9 Pro XL",brand:"Google",brandKey:"google",icon:"📱",
-   imgs:["https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=600&h=700&fit=crop&q=85","https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=600&h=700&fit=crop&q=85"],
+   imgs:["https://lh3.googleusercontent.com/3YnNLsBJ-kNfJT5q0WYmRlhBCdW1CeSP3aXEqYVd9kHi5P6nMZ8wO4uL7vT1xA=w800","https://lh3.googleusercontent.com/3YnNLsBJ-kNfJT5q0WYmRlhBCdW1CeSP3aXEqYVd9kHi5P6nMZ8wO4uL7vT1xA=w400"],
    price:1648350,old:1814850,badge:"hot",category:"phone",rating:4.8,reviews:876,
    specs:{"Display":"6.8\" LTPO OLED","Chip":"Tensor G4","Camera":"50MP Triple","Condition":"Grade A UK Used","Battery":"5100mAh"},
    desc:"Grade A UK used Pixel 9 Pro XL. Largest Pixel with big battery and pro-grade AI camera."},
 
   {id:305,name:"Google Pixel 9 Pro Fold",brand:"Google",brandKey:"google",icon:"📲",
-   imgs:["https://images.unsplash.com/photo-1610945264803-c22b62d2a7b3?w=600&h=700&fit=crop&q=85","https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=600&h=700&fit=crop&q=85"],
+   imgs:["https://lh3.googleusercontent.com/7RpQZ4kH2mNvXw9JsT8yKlE6iCbA0dFuV3GoBn5qeYhM1jLzWx4cP6rU8tS2vA=w800","https://lh3.googleusercontent.com/7RpQZ4kH2mNvXw9JsT8yKlE6iCbA0dFuV3GoBn5qeYhM1jLzWx4cP6rU8tS2vA=w400"],
    price:2309850,old:2639850,badge:"hot",category:"phone",rating:4.7,reviews:432,
    specs:{"Display":"8\" Foldable OLED","Chip":"Tensor G4","Camera":"48MP Triple","Condition":"Grade A UK Used","Hinge":"IPX8 rated"},
    desc:"Grade A UK used Pixel 9 Pro Fold. Google's foldable flagship with pro camera and Gemini AI."},
 
   {id:306,name:"Google Pixel 9a",brand:"Google",brandKey:"google",icon:"📱",
-   imgs:["https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=600&h=700&fit=crop&q=85","https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=600&h=700&fit=crop&q=85"],
+   imgs:["https://lh3.googleusercontent.com/2MsZkVnH8jQwPx4YrT7uKlF9iBaA3dEuU2GnBo6peZiL1jMzWy5cP7qU9tR3vA=w800","https://lh3.googleusercontent.com/2MsZkVnH8jQwPx4YrT7uKlF9iBaA3dEuU2GnBo6peZiL1jMzWy5cP7qU9tR3vA=w400"],
    price:989850,old:1152350,badge:"new",category:"phone",rating:4.7,reviews:321,
    specs:{"Display":"6.3\" OLED","Chip":"Tensor G4","Camera":"48MP Dual","Condition":"Grade A UK Used","Storage":"128GB/256GB"},
    desc:"Grade A UK used Pixel 9a. Flagship Tensor G4 AI at a wallet-friendly price."},
 
   {id:307,name:"Google Pixel 10",brand:"Google",brandKey:"google",icon:"📱",
-   imgs:["https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=600&h=700&fit=crop&q=85","https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=600&h=700&fit=crop&q=85"],
+   imgs:["https://lh3.googleusercontent.com/OlKE_YtEJjjUCxXJZ0IwXTqm0J6YvArx7u7VcpjO6Xt0FdF6V3kP7Y9eZ4yH2A=w800","https://lh3.googleusercontent.com/6A9lFYkIhGGNjLJL3bMvNwxVrEJrJFhWo_akxFKXNfCN9gv3bFWl7a8g7IKhkU5-3A=w400"],
    price:1318350,old:1484850,badge:"new",category:"phone",rating:5.0,reviews:143,
    specs:{"Display":"6.3\" OLED","Chip":"Tensor G5","Camera":"50MP Dual","Condition":"Grade A UK Used","Storage":"128GB/256GB"},
    desc:"Grade A UK used Pixel 10. Next-gen Tensor G5, smarter Gemini AI, improved cameras."},
 
   {id:308,name:"Google Pixel 10 Pro",brand:"Google",brandKey:"google",icon:"📱",
-   imgs:["https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=600&h=700&fit=crop&q=85","https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=600&h=700&fit=crop&q=85"],
+   imgs:["https://lh3.googleusercontent.com/KyZFD7k5xNHf3WQi7a2KbLl5kQdQw0-qV8yoEPm9P6xHTG3Yj8y7m5nZ6vR2wA=w800","https://lh3.googleusercontent.com/OlKE_YtEJjjUCxXJZ0IwXTqm0J6YvArx7u7VcpjO6Xt0FdF6V3kP7Y9eZ4yH2A=w400"],
    price:1648350,old:1814850,badge:"new",category:"phone",rating:5.0,reviews:98,
    specs:{"Display":"6.3\" LTPO OLED","Chip":"Tensor G5","Camera":"50MP Triple","Condition":"Grade A UK Used","Storage":"128GB–1TB"},
    desc:"Grade A UK used Pixel 10 Pro. Tensor G5, pro triple camera, advanced Gemini AI features."},
 
   {id:309,name:"Google Pixel 10 Pro XL",brand:"Google",brandKey:"google",icon:"📱",
-   imgs:["https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=600&h=700&fit=crop&q=85","https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=600&h=700&fit=crop&q=85"],
+   imgs:["https://lh3.googleusercontent.com/3YnNLsBJ-kNfJT5q0WYmRlhBCdW1CeSP3aXEqYVd9kHi5P6nMZ8wO4uL7vT1xA=w800","https://lh3.googleusercontent.com/KyZFD7k5xNHf3WQi7a2KbLl5kQdQw0-qV8yoEPm9P6xHTG3Yj8y7m5nZ6vR2wA=w400"],
    price:1814850,old:1979850,badge:"new",category:"phone",rating:5.0,reviews:76,
    specs:{"Display":"6.8\" LTPO OLED","Chip":"Tensor G5","Camera":"50MP Triple","Condition":"Grade A UK Used","Battery":"5200mAh"},
    desc:"Grade A UK used Pixel 10 Pro XL. The biggest, most powerful Pixel ever made."},
 
   {id:310,name:"Google Pixel 10 Pro Fold",brand:"Google",brandKey:"google",icon:"📲",
-   imgs:["https://images.unsplash.com/photo-1610945264803-c22b62d2a7b3?w=600&h=700&fit=crop&q=85","https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=600&h=700&fit=crop&q=85"],
+   imgs:["https://lh3.googleusercontent.com/7RpQZ4kH2mNvXw9JsT8yKlE6iCbA0dFuV3GoBn5qeYhM1jLzWx4cP6rU8tS2vA=w800","https://lh3.googleusercontent.com/3YnNLsBJ-kNfJT5q0WYmRlhBCdW1CeSP3aXEqYVd9kHi5P6nMZ8wO4uL7vT1xA=w400"],
    price:2639850,old:2969850,badge:"new",category:"phone",rating:5.0,reviews:54,
    specs:{"Display":"8.3\" Foldable OLED","Chip":"Tensor G5","Camera":"50MP Triple","Condition":"Grade A UK Used","Hinge":"IPX8 rated"},
    desc:"Grade A UK used Pixel 10 Pro Fold. The ultimate Pixel — foldable, powerful, AI-first."},
 
   {id:311,name:"Google Pixel 10a",brand:"Google",brandKey:"google",icon:"📱",
-   imgs:["https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=600&h=700&fit=crop&q=85","https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=600&h=700&fit=crop&q=85"],
+   imgs:["https://lh3.googleusercontent.com/2MsZkVnH8jQwPx4YrT7uKlF9iBaA3dEuU2GnBo6peZiL1jMzWy5cP7qU9tR3vA=w800","https://lh3.googleusercontent.com/6A9lFYkIhGGNjLJL3bMvNwxVrEJrJFhWo_akxFKXNfCN9gv3bFWl7a8g7IKhkU5-3A=w400"],
    price:824850,old:989850,badge:"new",category:"phone",rating:4.8,reviews:112,
    specs:{"Display":"6.3\" OLED","Chip":"Tensor G5","Camera":"48MP Dual","Condition":"Grade A UK Used","Storage":"128GB/256GB"},
    desc:"Grade A UK used Pixel 10a. Next-gen Tensor G5 AI at the most affordable Pixel price."},
 
   // ── LAPTOPS ──
   {id:401,name:"MacBook Air 13-inch (M3)",brand:"Apple",brandKey:"apple",icon:"💻",
-   imgs:["https://pngimg.com/uploads/macbook/macbook_PNG5.png","https://pngimg.com/uploads/macbook/macbook_PNG4.png"],
+   imgs:["https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/macbook-air-midnight-select-20220606?wid=800&hei=600&fmt=p-jpg&qlt=95","https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/macbook-air-starlight-select-20220606?wid=800&hei=600&fmt=p-jpg&qlt=95"],
    price:1648350,old:1814850,badge:"hot",category:"laptop",rating:4.9,reviews:2341,
    specs:{"Chip":"M3","RAM":"8GB–16GB Unified","Storage":"256GB–2TB SSD","Display":"13.6\" Liquid Retina","Condition":"Grade A UK Used"},
    desc:"Grade A UK used MacBook Air 13\" M3. Fanless, featherlight, all-day battery — the world's best everyday laptop."},
 
   {id:402,name:"MacBook Air 15-inch (M3)",brand:"Apple",brandKey:"apple",icon:"💻",
-   imgs:["https://pngimg.com/uploads/macbook/macbook_PNG6.png","https://pngimg.com/uploads/macbook/macbook_PNG5.png"],
+   imgs:["https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/macbook-air-15-midnight-select-202306?wid=800&hei=600&fmt=p-jpg&qlt=95","https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/macbook-air-15-starlight-select-202306?wid=800&hei=600&fmt=p-jpg&qlt=95"],
    price:1979850,old:2143350,badge:"hot",category:"laptop",rating:4.9,reviews:1543,
    specs:{"Chip":"M3","RAM":"8GB–24GB Unified","Storage":"256GB–2TB SSD","Display":"15.3\" Liquid Retina","Condition":"Grade A UK Used"},
    desc:"Grade A UK used MacBook Air 15\" M3. Big screen, M3 power, completely fanless design."},
 
   {id:403,name:"MacBook Pro 14-inch (M3)",brand:"Apple",brandKey:"apple",icon:"💻",
-   imgs:["https://pngimg.com/uploads/macbook/macbook_PNG7.png","https://pngimg.com/uploads/macbook/macbook_PNG8.png"],
+   imgs:["https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/mbp14-spaceblack-select-202310?wid=800&hei=600&fmt=p-jpg&qlt=95","https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/mbp14-silver-select-202310?wid=800&hei=600&fmt=p-jpg&qlt=95"],
    price:2639850,old:2969850,badge:"new",category:"laptop",rating:4.9,reviews:1120,
    specs:{"Chip":"M3 / M3 Pro","RAM":"18GB–36GB Unified","Storage":"512GB–4TB SSD","Display":"14.2\" Liquid Retina XDR","Condition":"Grade A UK Used"},
    desc:"Grade A UK used MacBook Pro 14\" M3. Pro performance in a compact package with stunning XDR display."},
 
   {id:404,name:"MacBook Pro 16-inch (M3)",brand:"Apple",brandKey:"apple",icon:"💻",
-   imgs:["https://pngimg.com/uploads/macbook/macbook_PNG8.png","https://pngimg.com/uploads/macbook/macbook_PNG7.png"],
+   imgs:["https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/mbp16-spaceblack-select-202310?wid=800&hei=600&fmt=p-jpg&qlt=95","https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/mbp16-silver-select-202310?wid=800&hei=600&fmt=p-jpg&qlt=95"],
    price:3628350,old:4128350,badge:"hot",category:"laptop",rating:4.9,reviews:2100,
    specs:{"Chip":"M3 Pro / M3 Max","RAM":"36GB–128GB Unified","Storage":"512GB–8TB SSD","Display":"16.2\" Liquid Retina XDR","Condition":"Grade A UK Used"},
    desc:"Grade A UK used MacBook Pro 16\" M3. The most powerful MacBook — built for the most demanding pros."},
 
   {id:405,name:"Dell XPS 13 Plus",brand:"Dell",brandKey:"dell",icon:"💻",
-   imgs:["https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=600&h=500&fit=crop&q=85","https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=600&h=500&fit=crop&q=85"],
+   imgs:["https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/notebooks/xps-notebooks/xps-13-9340/media-gallery/black/notebook-xps-13-9340-black-gallery-1.psd?fmt=pjpg&pscan=auto&scl=1&wid=4096&hei=3072&qlt=100&resMode=sharp2&size=4096,3072","https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/notebooks/xps-notebooks/xps-13-9340/media-gallery/black/notebook-xps-13-9340-black-gallery-3.psd?fmt=pjpg&pscan=auto&scl=1&wid=4096&hei=3072&qlt=100&resMode=sharp2&size=4096,3072"],
    price:1648350,old:1814850,badge:"new",category:"laptop",rating:4.7,reviews:765,
    specs:{"CPU":"Intel Core Ultra 7","RAM":"16GB–32GB","Storage":"512GB–2TB NVMe","Display":"13.4\" OLED Touch","Condition":"Grade A UK Used"},
    desc:"Grade A UK used Dell XPS 13 Plus. Ultra-compact powerhouse with OLED touch display and premium build."},
 
   {id:406,name:"Dell XPS 15",brand:"Dell",brandKey:"dell",icon:"💻",
-   imgs:["https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=600&h=500&fit=crop&q=85","https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=600&h=500&fit=crop&q=85"],
+   imgs:["https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/notebooks/xps-notebooks/xps-15-9530/media-gallery/gray/notebook-xps-15-9530-gallery-1.psd?fmt=pjpg&pscan=auto&scl=1&wid=4096&hei=3072&qlt=100&resMode=sharp2&size=4096,3072","https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/notebooks/xps-notebooks/xps-15-9530/media-gallery/gray/notebook-xps-15-9530-gallery-3.psd?fmt=pjpg&pscan=auto&scl=1&wid=4096&hei=3072&qlt=100&resMode=sharp2&size=4096,3072"],
    price:2143350,old:2475350,badge:"hot",category:"laptop",rating:4.8,reviews:876,
    specs:{"CPU":"Intel Core Ultra 9","RAM":"32GB","Storage":"1TB NVMe","Display":"15.6\" OLED 4K","Condition":"Grade A UK Used"},
    desc:"Grade A UK used Dell XPS 15. Stunning 4K OLED, RTX graphics — perfect for creators."},
 
   {id:407,name:"Dell XPS 17",brand:"Dell",brandKey:"dell",icon:"💻",
-   imgs:["https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=600&h=500&fit=crop&q=85","https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=600&h=500&fit=crop&q=85"],
+   imgs:["https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/notebooks/xps-notebooks/xps-17-9730/media-gallery/gray/notebook-xps-17-9730-gallery-1.psd?fmt=pjpg&pscan=auto&scl=1&wid=4096&hei=3072&qlt=100&resMode=sharp2&size=4096,3072","https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/notebooks/xps-notebooks/xps-17-9730/media-gallery/gray/notebook-xps-17-9730-gallery-3.psd?fmt=pjpg&pscan=auto&scl=1&wid=4096&hei=3072&qlt=100&resMode=sharp2&size=4096,3072"],
    price:2969850,old:3299850,badge:"new",category:"laptop",rating:4.7,reviews:543,
    specs:{"CPU":"Intel Core Ultra 9","RAM":"32GB–64GB","Storage":"1TB–4TB NVMe","Display":"17\" 4K+ Touch","Condition":"Grade A UK Used"},
    desc:"Grade A UK used Dell XPS 17. Maximum screen real estate with desktop-class power in a portable form."},
 
   {id:408,name:"HP Spectre x360 14",brand:"HP",brandKey:"hp",icon:"💻",
-   imgs:["https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=600&h=500&fit=crop&q=85","https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=600&h=500&fit=crop&q=85"],
+   imgs:["https://ssl-product-images.www8-hp.com/digmedialib/prodimg/lowres/c08228340.png","https://ssl-product-images.www8-hp.com/digmedialib/prodimg/lowres/c08228341.png"],
    price:1814850,old:1979850,badge:"sale",category:"laptop",rating:4.7,reviews:654,
    specs:{"CPU":"Intel Core Ultra 7","RAM":"16GB–32GB","Storage":"512GB–2TB NVMe","Display":"14\" 2.8K OLED Touch","Condition":"Grade A UK Used"},
    desc:"Grade A UK used HP Spectre x360 14. Gorgeous 360° hinge, OLED touch display, premium 2-in-1 design."},
 
   {id:409,name:"HP Spectre x360 16",brand:"HP",brandKey:"hp",icon:"💻",
-   imgs:["https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=600&h=500&fit=crop&q=85","https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=600&h=500&fit=crop&q=85"],
+   imgs:["https://ssl-product-images.www8-hp.com/digmedialib/prodimg/lowres/c08228350.png","https://ssl-product-images.www8-hp.com/digmedialib/prodimg/lowres/c08228351.png"],
    price:2309850,old:2639850,badge:"new",category:"laptop",rating:4.8,reviews:432,
    specs:{"CPU":"Intel Core Ultra 9","RAM":"32GB","Storage":"1TB–2TB NVMe","Display":"16\" 4K OLED Touch","Condition":"Grade A UK Used"},
    desc:"Grade A UK used HP Spectre x360 16. Large-format OLED 2-in-1 with Arc GPU and stunning display."},
 
   {id:410,name:"Lenovo ThinkPad X1 Carbon Gen 12",brand:"Lenovo",brandKey:"lenovo",icon:"💻",
-   imgs:["https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=600&h=500&fit=crop&q=85","https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=600&h=500&fit=crop&q=85"],
+   imgs:["https://p1-ofp.static.pub/medias/bWFzdGVyfHJvb3R8MjM3NDkzfGltYWdlL3BuZ3xoMzcvaGRhLzk0NTMyNjYxNTkyMzAucG5nfDU2NWM3OTA0YWEyZDE1ZDRlY2Y5ZjU4NmI0ZTQ2NDkzNDFhZjBhOGZlMDdjZmVhNzJjNDc0NWFiNjZhZGYwMjg/lenovo-laptop-thinkpad-x1-carbon-gen-12-14-hero.png","https://p1-ofp.static.pub/medias/bWFzdGVyfHJvb3R8MjE4MzIwfGltYWdlL3BuZ3xoMTYvaGEzLzk0NTMyNTYxMDU3NTgucG5nfGM5NWQ5YzYxZjgwYWQ1NGMzMGEzZDRiNjc3YzY3Y2FhMzM2ZjRjMjg1NGU5NjI1ZTFhMjJiZTI4MWVjNzRkNmI/lenovo-laptop-thinkpad-x1-carbon-gen-12-14-rear-side-facing.png"],
    price:1979850,old:2309850,badge:"hot",category:"laptop",rating:4.8,reviews:987,
    specs:{"CPU":"Intel Core Ultra 7","RAM":"16GB–32GB LPDDR5","Storage":"512GB–2TB SSD","Display":"14\" 2.8K OLED","Condition":"Grade A UK Used"},
    desc:"Grade A UK used ThinkPad X1 Carbon Gen 12. The legendary business laptop — featherlight, mil-spec tough."},
 
   {id:411,name:"Lenovo Yoga 9i",brand:"Lenovo",brandKey:"lenovo",icon:"💻",
-   imgs:["https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=600&h=500&fit=crop&q=85","https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=600&h=500&fit=crop&q=85"],
+   imgs:["https://p1-ofp.static.pub/medias/bWFzdGVyfHJvb3R8MjE4OTU4fGltYWdlL3BuZ3xoMGUvaGZjLzk0NTMzNDc0OTAyMDYucG5nfDE5MDNhZTgyZjIzYzYzNWFmNjRmNjJlYjFlMTZjNjZjMWVmODEzZjE1NjU4OTYzNDE4YWQ3OGEzN2VlNjhhOWE/lenovo-laptop-yoga-9i-gen-9-14-hero.png","https://p1-ofp.static.pub/medias/bWFzdGVyfHJvb3R8MzE5NTkwfGltYWdlL3BuZ3xoNmUvaGZhLzk0NTMzNTI4OTg4NDYucG5nfDczNDNhMWQ0MDU5NDEyZDExYTU0ZGY5OGJlMjZiY2JiYmI5YjY0ZjFkMWNkNDViMjI5NzVlMGY5MzBkZDE0M2Q/lenovo-laptop-yoga-9i-gen-9-14-rear-facing.png"],
    price:1648350,old:1814850,badge:"new",category:"laptop",rating:4.7,reviews:543,
    specs:{"CPU":"Intel Core Ultra 7","RAM":"16GB–32GB","Storage":"512GB–1TB SSD","Display":"14\" 2.8K OLED Touch","Condition":"Grade A UK Used"},
    desc:"Grade A UK used Lenovo Yoga 9i. Premium 2-in-1 with rotating soundbar hinge and vivid OLED touch."},
 
   {id:412,name:"ASUS Zenbook 14 OLED",brand:"ASUS",brandKey:"asus",icon:"💻",
-   imgs:["https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=600&h=500&fit=crop&q=85","https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=600&h=500&fit=crop&q=85"],
+   imgs:["https://dlcdnwebimgs.asus.com/gain/3B6C3EA1-0E07-4AFD-9A98-7B2B2A6A2B3A/w800","https://dlcdnwebimgs.asus.com/gain/3B6C3EA1-0E07-4AFD-9A98-7B2B2A6A2B3A/w800"],
    price:1318350,old:1484850,badge:"sale",category:"laptop",rating:4.7,reviews:765,
    specs:{"CPU":"AMD Ryzen 7 / Intel Core Ultra","RAM":"16GB–32GB","Storage":"512GB–1TB SSD","Display":"14\" 2.8K OLED 120Hz","Condition":"Grade A UK Used"},
    desc:"Grade A UK used ASUS Zenbook 14 OLED. Vivid OLED display, slim build, Copilot+ ready performance."},
 
   {id:413,name:"ASUS ROG Zephyrus G14",brand:"ASUS",brandKey:"asus",icon:"🎮",
-   imgs:["https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=600&h=500&fit=crop&q=85","https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=600&h=500&fit=crop&q=85"],
+   imgs:["https://dlcdnwebimgs.asus.com/gain/C9B0D9D1-9E06-4B7C-8A8B-9C8D8E8F8A8B/w800","https://dlcdnwebimgs.asus.com/gain/C9B0D9D1-9E06-4B7C-8A8B-9C8D8E8F8A8B/w800"],
    price:2143350,old:2475350,badge:"hot",category:"laptop",rating:4.8,reviews:654,
    specs:{"CPU":"AMD Ryzen 9","RAM":"32GB DDR5","Storage":"1TB NVMe","Display":"14\" OLED 165Hz","Condition":"Grade A UK Used"},
    desc:"Grade A UK used ROG Zephyrus G14. Compact gaming beast — RTX 4070, OLED 165Hz, all-day battery."},
 
   {id:414,name:"Microsoft Surface Laptop 7",brand:"Microsoft",brandKey:"microsoft",icon:"💻",
-   imgs:["https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=600&h=500&fit=crop&q=85","https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=600&h=500&fit=crop&q=85"],
+   imgs:["https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RW1lMBO?ver=d51e&q=90&m=6&h=600&w=800&b=%23FFFFFF&f=jpg&o=f&aim=true","https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RW1lMBP?ver=2db3&q=90&m=6&h=600&w=800&b=%23FFFFFF&f=jpg&o=f&aim=true"],
    price:1648350,old:1814850,badge:"new",category:"laptop",rating:4.7,reviews:432,
    specs:{"Chip":"Snapdragon X Elite","RAM":"16GB–32GB","Storage":"256GB–1TB SSD","Display":"13.8\"/15\" PixelSense","Condition":"Grade A UK Used"},
    desc:"Grade A UK used Surface Laptop 7. Snapdragon X Elite, Copilot+ AI, slim and refined design."},
@@ -2170,215 +2531,215 @@ var allProducts = [
   // ── AUDIO ──
   // Apple
   {id:601,name:"AirPods Pro 3",brand:"Apple",brandKey:"apple",icon:"🎧",
-   imgs:["https://images.unsplash.com/photo-1588423771073-b8903fead714?w=600&h=600&fit=crop&q=85","https://images.unsplash.com/photo-1603351154351-5e2d0600bb77?w=600&h=600&fit=crop&q=85"],
+   imgs:["https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MXK73?wid=800&hei=800&fmt=jpeg&qlt=90","https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MXK73_AV1?wid=800&hei=800&fmt=jpeg&qlt=90"],
    price:493350,old:576350,badge:"new",category:"audio",rating:4.9,reviews:5621,
    specs:{"Type":"In-ear","ANC":"Adaptive Transparency","Battery":"30hrs total","Chip":"H2","Fit":"Custom"},
    desc:"Most advanced AirPods ever — ANC, Adaptive Transparency, Spatial Audio and H2 chip."},
 
   {id:602,name:"AirPods 4",brand:"Apple",brandKey:"apple",icon:"🎧",
-   imgs:["https://images.unsplash.com/photo-1603351154351-5e2d0600bb77?w=600&h=600&fit=crop&q=85","https://images.unsplash.com/photo-1588423771073-b8903fead714?w=600&h=600&fit=crop&q=85"],
+   imgs:["https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MUWY3?wid=800&hei=800&fmt=jpeg&qlt=90","https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MUWY3_AV1?wid=800&hei=800&fmt=jpeg&qlt=90"],
    price:329350,old:411350,badge:"hot",category:"audio",rating:4.8,reviews:3210,
    specs:{"Type":"Open-ear","ANC":"Available","Battery":"30hrs total","Chip":"H2","Case":"USB-C"},
    desc:"AirPods 4 — redesigned open-ear fit with optional ANC and USB-C charging case."},
 
   // Sony
   {id:603,name:"Sony WH-1000XM6",brand:"Sony",brandKey:"sony",icon:"🎧",
-   imgs:["https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=600&h=600&fit=crop&q=85","https://images.unsplash.com/photo-1583394838336-acd977736f90?w=600&h=600&fit=crop&q=85"],
+   imgs:["https://images.unsplash.com/photo-1546435770-a3e426bf472b?w=800&h=800&fit=crop&q=90","https://images.unsplash.com/photo-1583394838336-acd977736f90?w=800&h=800&fit=crop&q=90"],
    price:658850,old:824850,badge:"hot",category:"audio",rating:4.9,reviews:3201,
    specs:{"Type":"Over-ear","ANC":"Industry-leading","Battery":"40hrs","Bluetooth":"5.3","Foldable":"Yes"},
    desc:"Industry-leading noise cancellation, exceptional sound, 40-hour battery life."},
 
   {id:604,name:"Sony WF-1000XM5",brand:"Sony",brandKey:"sony",icon:"🎧",
-   imgs:["https://images.unsplash.com/photo-1572536147248-ac59a8abfa4b?w=600&h=600&fit=crop&q=85","https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=600&h=600&fit=crop&q=85"],
+   imgs:["https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=800&h=800&fit=crop&q=90","https://images.unsplash.com/photo-1572536147248-ac59a8abfa4b?w=800&h=800&fit=crop&q=90"],
    price:493350,old:576350,badge:"sale",category:"audio",rating:4.8,reviews:1876,
    specs:{"Type":"In-ear","ANC":"Dual ANC","Battery":"24hrs","Bluetooth":"5.3","Driver":"Dynamic + BA"},
    desc:"Sony's best wireless earbuds — dual ANC processors, premium sound, 24-hour battery."},
 
   // JBL
   {id:619,name:"JBL Flip 6",brand:"JBL",brandKey:"jbl",icon:"🔊",
-   imgs:["https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=600&h=600&fit=crop&q=85","https://images.unsplash.com/photo-1545454675-3531b543be5d?w=600&h=600&fit=crop&q=85"],
+   imgs:["https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=800&h=800&fit=crop&q=90","https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=800&h=600&fit=crop&crop=left&q=90"],
    price:82350,old:109850,badge:"hot",category:"audio",rating:4.7,reviews:5432,
    specs:{"Battery":"12hrs","IP Rating":"IP67","Bluetooth":"5.1","PartyBoost":"Yes","Weight":"550g"},
    desc:"JBL Flip 6 — powerful sound in a portable package, IP67 waterproof, 12hrs playtime and PartyBoost."},
 
   {id:620,name:"JBL Charge 6",brand:"JBL",brandKey:"jbl",icon:"🔊",
-   imgs:["https://images.unsplash.com/photo-1545454675-3531b543be5d?w=600&h=600&fit=crop&q=85","https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=600&h=600&fit=crop&q=85"],
+   imgs:["https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=800&fit=crop&q=90","https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=600&fit=crop&crop=right&q=90"],
    price:164850,old:214350,badge:"new",category:"audio",rating:4.8,reviews:2187,
    specs:{"Battery":"20hrs","IP Rating":"IP67","Bluetooth":"5.3","Power Bank":"Yes","Auracast":"Yes"},
    desc:"JBL Charge 6 — 20hrs of powerful sound, IP67 waterproof, Auracast and built-in power bank."},
 
   {id:621,name:"JBL Charge 5",brand:"JBL",brandKey:"jbl",icon:"🔊",
-   imgs:["https://images.unsplash.com/photo-1571330735066-03aaa9429d89?w=600&h=600&fit=crop&q=85","https://images.unsplash.com/photo-1545454675-3531b543be5d?w=600&h=600&fit=crop&q=85"],
+   imgs:["https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=800&h=800&fit=crop&crop=top&q=90","https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=800&fit=crop&crop=bottom&q=90"],
    price:131350,old:164850,badge:"sale",category:"audio",rating:4.7,reviews:3876,
    specs:{"Battery":"20hrs","IP Rating":"IP67","Bluetooth":"5.1","Power Bank":"Yes","PartyBoost":"Yes"},
    desc:"JBL Charge 5 — bold JBL sound, 20hrs battery, IP67 waterproofing and USB power bank output."},
 
   {id:622,name:"JBL Clip 5",brand:"JBL",brandKey:"jbl",icon:"🔊",
-   imgs:["https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=600&h=600&fit=crop&q=85","https://images.unsplash.com/photo-1596455607563-ad6193f76b17?w=600&h=600&fit=crop&q=85"],
+   imgs:["https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=800&fit=crop&q=90","https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=600&h=800&fit=crop&q=90"],
    price:39850,old:55350,badge:"new",category:"audio",rating:4.6,reviews:2654,
    specs:{"Battery":"13hrs","IP Rating":"IP67","Bluetooth":"5.3","Clip":"Carabiner","Weight":"258g"},
    desc:"JBL Clip 5 — ultra-portable with integrated carabiner clip, IP67 waterproof and 13hrs playtime."},
 
   {id:605,name:"JBL Go 4",brand:"JBL",brandKey:"jbl",icon:"🔊",
-   imgs:["https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=600&h=600&fit=crop&q=85","https://images.unsplash.com/photo-1545454675-3531b543be5d?w=600&h=600&fit=crop&q=85"],
+   imgs:["https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=700&h=700&fit=crop&crop=center&q=90","https://images.unsplash.com/photo-1546435770-a3e426bf472b?w=700&h=700&fit=crop&q=90"],
    price:49350,old:65850,badge:"hot",category:"audio",rating:4.5,reviews:4210,
    specs:{"Battery":"7hrs","IP Rating":"IP67","Bluetooth":"5.3","Weight":"198g","Playtime":"7hrs"},
    desc:"Pocket-sized JBL Go 4. IP67 waterproof, bold JBL sound wherever you go."},
 
   {id:606,name:"JBL Xtreme 4",brand:"JBL",brandKey:"jbl",icon:"🔊",
-   imgs:["https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=600&h=600&fit=crop&q=85","https://images.unsplash.com/photo-1571330735066-03aaa9429d89?w=600&h=600&fit=crop&q=85"],
+   imgs:["https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900&h=700&fit=crop&q=90","https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=900&h=700&fit=crop&q=90"],
    price:246350,old:329350,badge:"hot",category:"audio",rating:4.8,reviews:1980,
    specs:{"Battery":"24hrs","IP Rating":"IP67","Bluetooth":"5.3","Auracast":"Yes","Power Bank":"Yes"},
    desc:"JBL Xtreme 4 — thunderous bass, 24hrs playtime, IP67 and Auracast multi-speaker support."},
 
   {id:607,name:"JBL Boombox 4",brand:"JBL",brandKey:"jbl",icon:"🔊",
-   imgs:["https://images.unsplash.com/photo-1571330735066-03aaa9429d89?w=600&h=600&fit=crop&q=85","https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=600&h=600&fit=crop&q=85"],
+   imgs:["https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=1000&h=700&fit=crop&q=90","https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1000&h=700&fit=crop&q=90"],
    price:576350,old:742350,badge:"new",category:"audio",rating:4.9,reviews:876,
    specs:{"Battery":"24hrs","IP Rating":"IP67","Bluetooth":"5.3","Auracast":"Yes","Weight":"5.4kg"},
    desc:"JBL Boombox 4 — party-grade power, earth-shaking bass, 24hrs playtime, IP67 protection."},
 
   {id:608,name:"JBL Boombox 3",brand:"JBL",brandKey:"jbl",icon:"🔊",
-   imgs:["https://images.unsplash.com/photo-1545454675-3531b543be5d?w=600&h=600&fit=crop&q=85","https://images.unsplash.com/photo-1571330735066-03aaa9429d89?w=600&h=600&fit=crop&q=85"],
+   imgs:["https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1000&h=700&fit=crop&crop=left&q=90","https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=1000&h=700&fit=crop&crop=right&q=90"],
    price:411350,old:576350,badge:"sale",category:"audio",rating:4.8,reviews:1543,
    specs:{"Battery":"24hrs","IP Rating":"IP67","Bluetooth":"5.2","PartyBoost":"Yes","Weight":"4.9kg"},
    desc:"JBL Boombox 3 — massive sound, deep bass, 24-hour battery and IP67 waterproofing."},
 
   {id:609,name:"JBL PartyBox 110",brand:"JBL",brandKey:"jbl",icon:"🔊",
-   imgs:["https://images.unsplash.com/photo-1596455607563-ad6193f76b17?w=600&h=600&fit=crop&q=85","https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=600&h=600&fit=crop&q=85"],
+   imgs:["https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=700&h=1000&fit=crop&q=90","https://images.unsplash.com/photo-1546435770-a3e426bf472b?w=700&h=900&fit=crop&q=90"],
    price:329350,old:411350,badge:"hot",category:"audio",rating:4.7,reviews:2100,
    specs:{"Power":"160W","Battery":"12hrs","Lights":"Dynamic","Bluetooth":"4.2","Mic Input":"Yes"},
    desc:"JBL PartyBox 110 — 160W party speaker with dynamic light show and 12-hour battery."},
 
   {id:610,name:"JBL PartyBox 310",brand:"JBL",brandKey:"jbl",icon:"🔊",
-   imgs:["https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=600&h=600&fit=crop&q=85","https://images.unsplash.com/photo-1596455607563-ad6193f76b17?w=600&h=600&fit=crop&q=85"],
+   imgs:["https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=700&h=1000&fit=crop&q=90","https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=700&h=1000&fit=crop&crop=top&q=90"],
    price:576350,old:742350,badge:"hot",category:"audio",rating:4.8,reviews:987,
    specs:{"Power":"240W","Battery":"18hrs","Lights":"RGB","Bluetooth":"5.1","Guitar Input":"Yes"},
    desc:"JBL PartyBox 310 — 240W monster, 18hrs party time, RGB lights and guitar input."},
 
   {id:611,name:"JBL PartyBox 720",brand:"JBL",brandKey:"jbl",icon:"🔊",
-   imgs:["https://images.unsplash.com/photo-1571330735066-03aaa9429d89?w=600&h=600&fit=crop&q=85","https://images.unsplash.com/photo-1596455607563-ad6193f76b17?w=600&h=600&fit=crop&q=85"],
+   imgs:["https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=700&h=1100&fit=crop&q=90","https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=700&h=1100&fit=crop&q=90"],
    price:989850,old:1152350,badge:"new",category:"audio",rating:4.9,reviews:654,
    specs:{"Power":"800W","Battery":"12hrs","Lights":"RGB+Strobe","Bluetooth":"5.1","Inputs":"Mic+Guitar+AUX"},
    desc:"JBL PartyBox 720 — 800W of raw power, strobes, RGB, mic and guitar inputs. The ultimate party speaker."},
 
   // Zealot
   {id:623,name:"Zealot S32 Speaker",brand:"Zealot",brandKey:"zealot",icon:"🔊",
-   imgs:["https://images.unsplash.com/photo-1596455607563-ad6193f76b17?w=600&h=600&fit=crop&q=85","https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=600&h=600&fit=crop&q=85"],
+   imgs:["https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=750&h=750&fit=crop&crop=focalpoint&fp-x=0.3&q=90","https://images.unsplash.com/photo-1546435770-a3e426bf472b?w=750&h=750&fit=crop&q=90"],
    price:15850,old:24850,badge:"sale",category:"audio",rating:4.4,reviews:1876,
    specs:{"Battery":"8hrs","Bluetooth":"5.0","FM Radio":"Yes","TF Card":"Yes","USB":"Playback"},
    desc:"Zealot S32 — compact and affordable with FM radio, TF card support and 8-hour battery life."},
 
   {id:624,name:"Zealot S51 Speaker",brand:"Zealot",brandKey:"zealot",icon:"🔊",
-   imgs:["https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=600&h=600&fit=crop&q=85","https://images.unsplash.com/photo-1571330735066-03aaa9429d89?w=600&h=600&fit=crop&q=85"],
+   imgs:["https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=750&h=750&fit=crop&crop=focalpoint&fp-x=0.7&q=90","https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=750&h=750&fit=crop&crop=focalpoint&fp-x=0.6&q=90"],
    price:22850,old:35350,badge:"hot",category:"audio",rating:4.5,reviews:1210,
    specs:{"Battery":"10hrs","Bluetooth":"5.0","Power":"10W","FM Radio":"Yes","LED":"Yes"},
    desc:"Zealot S51 — 10W output, FM radio, LED lighting and 10-hour battery for everyday fun."},
 
   {id:612,name:"Zealot S67 Speaker",brand:"Zealot",brandKey:"zealot",icon:"🔊",
-   imgs:["https://images.unsplash.com/photo-1596455607563-ad6193f76b17?w=600&h=600&fit=crop&q=85","https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=600&h=600&fit=crop&q=85"],
+   imgs:["https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=780&h=780&fit=crop&crop=focalpoint&fp-x=0.4&q=90","https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=780&h=780&fit=crop&crop=focalpoint&fp-x=0.5&q=90"],
    price:29850,old:45850,badge:"sale",category:"audio",rating:4.5,reviews:1320,
    specs:{"Battery":"10hrs","Bluetooth":"5.0","FM Radio":"Yes","TF Card":"Yes","LED":"Yes"},
    desc:"Zealot S67 — rich bass, FM radio, TF card, LED lights and 10-hour battery at great value."},
 
   {id:613,name:"Zealot S78 Speaker",brand:"Zealot",brandKey:"zealot",icon:"🔊",
-   imgs:["https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=600&h=600&fit=crop&q=85","https://images.unsplash.com/photo-1596455607563-ad6193f76b17?w=600&h=600&fit=crop&q=85"],
+   imgs:["https://images.unsplash.com/photo-1546435770-a3e426bf472b?w=780&h=780&fit=crop&crop=focalpoint&fp-x=0.5&q=90","https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=780&h=780&fit=crop&crop=focalpoint&fp-x=0.7&q=90"],
    price:35350,old:52850,badge:"hot",category:"audio",rating:4.6,reviews:987,
    specs:{"Battery":"12hrs","Bluetooth":"5.1","LED":"RGB","TF Card":"Yes","AUX":"3.5mm"},
    desc:"Zealot S78 — RGB party speaker with punchy bass, 12hrs battery and TF card support."},
 
   {id:614,name:"Zealot S79 Speaker",brand:"Zealot",brandKey:"zealot",icon:"🔊",
-   imgs:["https://images.unsplash.com/photo-1571330735066-03aaa9429d89?w=600&h=600&fit=crop&q=85","https://images.unsplash.com/photo-1596455607563-ad6193f76b17?w=600&h=600&fit=crop&q=85"],
+   imgs:["https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=780&fit=crop&q=90","https://images.unsplash.com/photo-1546435770-a3e426bf472b?w=800&h=780&fit=crop&crop=right&q=90"],
    price:39850,old:55850,badge:"new",category:"audio",rating:4.6,reviews:765,
    specs:{"Battery":"14hrs","Bluetooth":"5.1","Power":"20W","RGB":"Yes","Waterproof":"IPX5"},
    desc:"Zealot S79 — 20W output, IPX5 splash-proof, RGB lighting and 14-hour battery life."},
 
   {id:615,name:"Zealot S87 Speaker",brand:"Zealot",brandKey:"zealot",icon:"🔊",
-   imgs:["https://images.unsplash.com/photo-1596455607563-ad6193f76b17?w=600&h=600&fit=crop&q=85","https://images.unsplash.com/photo-1571330735066-03aaa9429d89?w=600&h=600&fit=crop&q=85"],
+   imgs:["https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=800&h=780&fit=crop&crop=left&q=90","https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=780&fit=crop&crop=left&q=90"],
    price:49350,old:65850,badge:"hot",category:"audio",rating:4.7,reviews:1540,
    specs:{"Battery":"12hrs","Bluetooth":"5.1","Power":"30W","RGB":"LED","FM":"Yes"},
    desc:"Zealot S87 — 30W party power, deep bass, RGB LED lights and FM radio."},
 
   {id:616,name:"Zealot S97 Speaker",brand:"Zealot",brandKey:"zealot",icon:"🔊",
-   imgs:["https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=600&h=600&fit=crop&q=85","https://images.unsplash.com/photo-1571330735066-03aaa9429d89?w=600&h=600&fit=crop&q=85"],
+   imgs:["https://images.unsplash.com/photo-1546435770-a3e426bf472b?w=800&h=800&fit=crop&crop=top&q=90","https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=800&h=800&fit=crop&crop=bottom&q=90"],
    price:59850,old:79850,badge:"new",category:"audio",rating:4.7,reviews:654,
    specs:{"Battery":"15hrs","Bluetooth":"5.1","Power":"40W","RGB":"Yes","Mic Input":"Yes"},
    desc:"Zealot S97 — 40W powerhouse with mic input, RGB and 15-hour playtime for any occasion."},
 
   {id:617,name:"Zealot S98 Speaker",brand:"Zealot",brandKey:"zealot",icon:"🔊",
-   imgs:["https://images.unsplash.com/photo-1571330735066-03aaa9429d89?w=600&h=600&fit=crop&q=85","https://images.unsplash.com/photo-1596455607563-ad6193f76b17?w=600&h=600&fit=crop&q=85"],
+   imgs:["https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=820&h=820&fit=crop&q=90","https://images.unsplash.com/photo-1583394838336-acd977736f90?w=820&h=820&fit=crop&q=90"],
    price:69850,old:89850,badge:"hot",category:"audio",rating:4.8,reviews:432,
    specs:{"Battery":"18hrs","Bluetooth":"5.2","Power":"60W","RGB":"Advanced","Waterproof":"IPX5"},
    desc:"Zealot S98 — 60W output, IPX5 waterproof, advanced RGB and 18hrs of party power."},
 
   {id:618,name:"Zealot ZE41 Speaker",brand:"Zealot",brandKey:"zealot",icon:"🔊",
-   imgs:["https://images.unsplash.com/photo-1596455607563-ad6193f76b17?w=600&h=600&fit=crop&q=85","https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=600&h=600&fit=crop&q=85"],
+   imgs:["https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=820&h=820&fit=crop&q=90","https://images.unsplash.com/photo-1546435770-a3e426bf472b?w=820&h=820&fit=crop&crop=bottom&q=90"],
    price:55350,old:75350,badge:"sale",category:"audio",rating:4.6,reviews:321,
    specs:{"Battery":"16hrs","Bluetooth":"5.1","Power":"50W","LED":"RGB","TF Card":"Yes"},
    desc:"Zealot ZE41 — 50W, RGB lights, TF card, and 16-hour playtime in a compact build."},
 
   // ── TABLETS ──
   {id:501,name:"Apple iPad (10th Gen)",brand:"Apple",brandKey:"apple",icon:"📱",
-   imgs:["https://pngimg.com/uploads/ipad/ipad_PNG13.png","https://pngimg.com/uploads/ipad/ipad_PNG14.png"],
+   imgs:["https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/ipad-10th-gen-finish-select-202212-blue-wifi?wid=800&hei=900&fmt=p-jpg&qlt=95","https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/ipad-10th-gen-finish-select-202212-yellow-wifi?wid=800&hei=900&fmt=p-jpg&qlt=95"],
    price:659850,old:824850,badge:"sale",category:"tablet",rating:4.7,reviews:3210,
    specs:{"Display":"10.9\" Liquid Retina","Chip":"A14 Bionic","Storage":"64GB–256GB","Condition":"Grade A UK Used","Connectivity":"USB-C"},
    desc:"Grade A UK used iPad 10th Gen. All-screen design, A14 Bionic, USB-C — great value tablet."},
 
   {id:502,name:"Apple iPad Mini (6th Gen)",brand:"Apple",brandKey:"apple",icon:"📱",
-   imgs:["https://pngimg.com/uploads/ipad/ipad_PNG15.png","https://pngimg.com/uploads/ipad/ipad_PNG13.png"],
+   imgs:["https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/ipad-mini-finish-select-202109-purple-wifi?wid=800&hei=900&fmt=p-jpg&qlt=95","https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/ipad-mini-finish-select-202109-starlight-wifi?wid=800&hei=900&fmt=p-jpg&qlt=95"],
    price:824850,old:989850,badge:"hot",category:"tablet",rating:4.8,reviews:1876,
    specs:{"Display":"8.3\" Liquid Retina","Chip":"A15 Bionic","Storage":"64GB–256GB","Condition":"Grade A UK Used","Connectivity":"USB-C"},
    desc:"Grade A UK used iPad Mini 6th Gen. Pocket-sized powerhouse with A15 Bionic and stunning display."},
 
   {id:503,name:"Apple iPad Air (M2)",brand:"Apple",brandKey:"apple",icon:"📱",
-   imgs:["https://pngimg.com/uploads/ipad/ipad_PNG18.png","https://pngimg.com/uploads/ipad/ipad_PNG15.png"],
+   imgs:["https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/ipad-air-m2-finish-select-202405-11inch-blue-wifi?wid=800&hei=900&fmt=p-jpg&qlt=95","https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/ipad-air-m2-finish-select-202405-11inch-purple-wifi?wid=800&hei=900&fmt=p-jpg&qlt=95"],
    price:1152350,old:1318350,badge:"new",category:"tablet",rating:4.8,reviews:1543,
    specs:{"Display":"11\"/13\" Liquid Retina","Chip":"M2","Storage":"128GB–1TB","Condition":"Grade A UK Used","Apple Pencil":"Pro"},
    desc:"Grade A UK used iPad Air M2. Serious performance in a thin and light design — handles any task."},
 
   {id:504,name:"Apple iPad Pro 11-inch (M4)",brand:"Apple",brandKey:"apple",icon:"📱",
-   imgs:["https://pngimg.com/uploads/ipad/ipad_PNG20.png","https://pngimg.com/uploads/ipad/ipad_PNG18.png"],
+   imgs:["https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/ipad-pro-11-m4-finish-select-202405-11inch-silver-wifi?wid=800&hei=900&fmt=p-jpg&qlt=95","https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/ipad-pro-11-m4-finish-select-202405-11inch-black-wifi?wid=800&hei=900&fmt=p-jpg&qlt=95"],
    price:1814850,old:1979850,badge:"hot",category:"tablet",rating:4.9,reviews:987,
    specs:{"Display":"11\" Ultra Retina XDR OLED","Chip":"M4","Storage":"256GB–2TB","Condition":"Grade A UK Used","Thickness":"5.3mm"},
    desc:"Grade A UK used iPad Pro 11\" M4. Tandem OLED, M4 chip — the thinnest Apple product ever made."},
 
   {id:505,name:"Apple iPad Pro 13-inch (M4)",brand:"Apple",brandKey:"apple",icon:"📱",
-   imgs:["https://pngimg.com/uploads/ipad/ipad_PNG18.png","https://pngimg.com/uploads/ipad/ipad_PNG20.png"],
+   imgs:["https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/ipad-pro-13-m4-finish-select-202405-13inch-silver-wifi?wid=800&hei=900&fmt=p-jpg&qlt=95","https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/ipad-pro-13-m4-finish-select-202405-13inch-black-wifi?wid=800&hei=900&fmt=p-jpg&qlt=95"],
    price:2309850,old:2639850,badge:"hot",category:"tablet",rating:4.9,reviews:1203,
    specs:{"Display":"13\" Ultra Retina XDR OLED","Chip":"M4","Storage":"256GB–2TB","Condition":"Grade A UK Used","RAM":"16GB"},
    desc:"Grade A UK used iPad Pro 13\" M4. The ultimate iPad — massive OLED display, M4 power, ultra-thin."},
 
   {id:506,name:"Samsung Galaxy Tab S9",brand:"Samsung",brandKey:"samsung",icon:"📱",
-   imgs:["https://images.unsplash.com/photo-1561154464-82e9adf32764?w=600&h=500&fit=crop&q=85","https://images.unsplash.com/photo-1587033411391-5d9e51cce126?w=600&h=500&fit=crop&q=85"],
+   imgs:["https://images.samsung.com/is/image/samsung/p6pim/uk/2307/gallery/uk-galaxy-tab-s9-x710-sm-x710nzaabtu-thumb-537441291?$650_519_PNG$","https://images.samsung.com/is/image/samsung/p6pim/uk/2307/gallery/uk-galaxy-tab-s9-x710-sm-x710nzgabtu-thumb-537441292?$650_519_PNG$"],
    price:824850,old:989850,badge:"sale",category:"tablet",rating:4.7,reviews:1432,
    specs:{"Display":"11\" Dynamic AMOLED 2X","Chip":"Snapdragon 8 Gen 2","Storage":"128GB–256GB","Condition":"Grade A UK Used","S Pen":"Included"},
    desc:"Grade A UK used Galaxy Tab S9. Vibrant AMOLED, Snapdragon 8 Gen 2, IP68 rated with S Pen."},
 
   {id:507,name:"Samsung Galaxy Tab S9+",brand:"Samsung",brandKey:"samsung",icon:"📱",
-   imgs:["https://images.unsplash.com/photo-1587033411391-5d9e51cce126?w=600&h=500&fit=crop&q=85","https://images.unsplash.com/photo-1561154464-82e9adf32764?w=600&h=500&fit=crop&q=85"],
+   imgs:["https://images.samsung.com/is/image/samsung/p6pim/uk/2307/gallery/uk-galaxy-tab-s9-plus-x816-sm-x816bzkabtu-thumb-537441295?$650_519_PNG$","https://images.samsung.com/is/image/samsung/p6pim/uk/2307/gallery/uk-galaxy-tab-s9-plus-x816-sm-x816bzaabtu-thumb-537441296?$650_519_PNG$"],
    price:1152350,old:1318350,badge:"hot",category:"tablet",rating:4.8,reviews:876,
    specs:{"Display":"12.4\" Dynamic AMOLED 2X","Chip":"Snapdragon 8 Gen 2","Storage":"256GB–512GB","Condition":"Grade A UK Used","Battery":"10090mAh"},
    desc:"Grade A UK used Galaxy Tab S9+. Large AMOLED display, Galaxy AI, S Pen for creative work."},
 
   {id:508,name:"Samsung Galaxy Tab S9 Ultra",brand:"Samsung",brandKey:"samsung",icon:"📱",
-   imgs:["https://images.unsplash.com/photo-1561154464-82e9adf32764?w=600&h=500&fit=crop&q=85","https://images.unsplash.com/photo-1587033411391-5d9e51cce126?w=600&h=500&fit=crop&q=85"],
+   imgs:["https://images.samsung.com/is/image/samsung/p6pim/uk/2307/gallery/uk-galaxy-tab-s9-ultra-x910-sm-x910nzaabtu-thumb-537441298?$650_519_PNG$","https://images.samsung.com/is/image/samsung/p6pim/uk/2307/gallery/uk-galaxy-tab-s9-ultra-x910-sm-x910nzgabtu-thumb-537441299?$650_519_PNG$"],
    price:1814850,old:1979850,badge:"hot",category:"tablet",rating:4.8,reviews:654,
    specs:{"Display":"14.6\" Dynamic AMOLED 2X","Chip":"Snapdragon 8 Gen 2","Storage":"256GB–1TB","Condition":"Grade A UK Used","S Pen":"Included"},
    desc:"Grade A UK used Galaxy Tab S9 Ultra. Massive 14.6\" display with built-in S Pen for power users."},
 
   {id:509,name:"Samsung Galaxy Tab S9 FE",brand:"Samsung",brandKey:"samsung",icon:"📱",
-   imgs:["https://images.unsplash.com/photo-1587033411391-5d9e51cce126?w=600&h=500&fit=crop&q=85","https://images.unsplash.com/photo-1561154464-82e9adf32764?w=600&h=500&fit=crop&q=85"],
+   imgs:["https://images.samsung.com/is/image/samsung/p6pim/uk/2307/gallery/uk-galaxy-tab-s9-fe-x510-sm-x510nzaabtu-thumb-537441291?$650_519_PNG$","https://images.samsung.com/is/image/samsung/p6pim/uk/2307/gallery/uk-galaxy-tab-s9-fe-x510-sm-x510nzgabtu-thumb-537441292?$650_519_PNG$"],
    price:576350,old:742350,badge:"sale",category:"tablet",rating:4.6,reviews:987,
    specs:{"Display":"10.9\" TFT LCD","Chip":"Exynos 1380","Storage":"128GB–256GB","Condition":"Grade A UK Used","S Pen":"Included"},
    desc:"Grade A UK used Galaxy Tab S9 FE. Fan Edition — great value tablet with S Pen included."},
 
   {id:510,name:"Google Pixel Tablet",brand:"Google",brandKey:"google",icon:"📱",
-   imgs:["https://images.unsplash.com/photo-1561154464-82e9adf32764?w=600&h=500&fit=crop&q=85","https://images.unsplash.com/photo-1587033411391-5d9e51cce126?w=600&h=500&fit=crop&q=85"],
+   imgs:["https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/ipad-10th-gen-finish-select-202212-blue-wifi?wid=800&hei=900&fmt=p-jpg&qlt=95","https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/ipad-10th-gen-finish-select-202212-silver-wifi?wid=800&hei=900&fmt=p-jpg&qlt=95"],
    price:742350,old:907850,badge:"new",category:"tablet",rating:4.6,reviews:543,
    specs:{"Display":"10.95\" LCD","Chip":"Tensor G2","Storage":"128GB–256GB","Condition":"Grade A UK Used","Hub":"Charging Speaker Dock"},
    desc:"Grade A UK used Google Pixel Tablet. Tensor G2 smarts, doubles as a smart home hub with charging dock."},
 
   {id:511,name:"Microsoft Surface Pro 11",brand:"Microsoft",brandKey:"microsoft",icon:"💻",
-   imgs:["https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=600&h=500&fit=crop&q=85","https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=600&h=500&fit=crop&q=85"],
+   imgs:["https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RW1lMBO?ver=d51e&q=90&m=6&h=600&w=800&b=%23FFFFFF&f=jpg&o=f&aim=true","https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RW1lMBP?ver=2db3&q=90&m=6&h=600&w=800&b=%23FFFFFF&f=jpg&o=f&aim=true"],
    price:2143350,old:2309850,badge:"new",category:"tablet",rating:4.7,reviews:432,
    specs:{"Display":"13\" OLED 120Hz","Chip":"Snapdragon X Elite","Storage":"256GB–1TB","Condition":"Grade A UK Used","Battery":"14hrs"},
    desc:"Grade A UK used Surface Pro 11. Full Windows on a tablet with OLED display and Copilot+ AI."},
@@ -2386,82 +2747,82 @@ var allProducts = [
   // ── ACCESSORIES ──
   // Oraimo Earbuds
   {id:701,name:"Oraimo SpaceBuds",brand:"Oraimo",brandKey:"oraimo",icon:"🎧",
-   imgs:["https://images.unsplash.com/photo-1572536147248-ac59a8abfa4b?w=600&h=600&fit=crop&q=85","https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=600&h=600&fit=crop&q=85"],
+   imgs:["https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=800&h=800&fit=crop&q=90","https://images.unsplash.com/photo-1572536147248-ac59a8abfa4b?w=800&h=800&fit=crop&q=90"],
    price:19850,old:29850,badge:"hot",category:"accessory",rating:4.5,reviews:2310,
    specs:{"Type":"TWS Earbuds","Battery":"24hrs total","ANC":"Yes","Bluetooth":"5.3","Water":"IPX5"},
    desc:"Oraimo SpaceBuds — active noise cancellation, 24-hour total battery, great everyday earbuds."},
 
   {id:702,name:"Oraimo SpaceBuds Pro",brand:"Oraimo",brandKey:"oraimo",icon:"🎧",
-   imgs:["https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=600&h=600&fit=crop&q=85","https://images.unsplash.com/photo-1572536147248-ac59a8abfa4b?w=600&h=600&fit=crop&q=85"],
+   imgs:["https://images.unsplash.com/photo-1572536147248-ac59a8abfa4b?w=800&h=800&fit=crop&crop=top&q=90","https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=800&h=800&fit=crop&crop=top&q=90"],
    price:27350,old:39850,badge:"new",category:"accessory",rating:4.6,reviews:1540,
    specs:{"Type":"TWS Earbuds","Battery":"32hrs total","ANC":"Hybrid ANC","Bluetooth":"5.3","EQ":"App EQ"},
    desc:"Oraimo SpaceBuds Pro — hybrid ANC, app EQ, 32-hour battery and premium audio clarity."},
 
   {id:703,name:"Oraimo Necklace Pro",brand:"Oraimo",brandKey:"oraimo",icon:"🎧",
-   imgs:["https://images.unsplash.com/photo-1583394838336-acd977736f90?w=600&h=600&fit=crop&q=85","https://images.unsplash.com/photo-1572536147248-ac59a8abfa4b?w=600&h=600&fit=crop&q=85"],
+   imgs:["https://images.unsplash.com/photo-1546435770-a3e426bf472b?w=800&h=800&fit=crop&crop=focalpoint&fp-x=0.4&q=90","https://images.unsplash.com/photo-1583394838336-acd977736f90?w=800&h=800&fit=crop&crop=focalpoint&fp-x=0.6&q=90"],
    price:15850,old:24850,badge:"sale",category:"accessory",rating:4.4,reviews:987,
    specs:{"Type":"Neckband","Battery":"12hrs","Bluetooth":"5.0","Magnet":"Auto-pause","Water":"IPX5"},
    desc:"Oraimo Necklace Pro — neckband design with magnetic auto-pause and 12-hour playtime."},
 
   {id:704,name:"Oraimo FreePods 4",brand:"Oraimo",brandKey:"oraimo",icon:"🎧",
-   imgs:["https://images.unsplash.com/photo-1572536147248-ac59a8abfa4b?w=600&h=600&fit=crop&q=85","https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=600&h=600&fit=crop&q=85"],
+   imgs:["https://images.unsplash.com/photo-1583394838336-acd977736f90?w=800&h=800&fit=crop&crop=top&q=90","https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=800&h=800&fit=crop&crop=bottom&q=90"],
    price:12850,old:19850,badge:"hot",category:"accessory",rating:4.4,reviews:3210,
    specs:{"Type":"TWS Earbuds","Battery":"20hrs total","Bluetooth":"5.3","Driver":"13mm","Water":"IPX5"},
    desc:"Oraimo FreePods 4 — lightweight open-ear TWS, 20-hour battery, great for all-day comfort."},
 
   // Oraimo Watches
   {id:705,name:"Oraimo Watch 5R",brand:"Oraimo",brandKey:"oraimo",icon:"⌚",
-   imgs:["https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600&h=600&fit=crop&q=85","https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?w=600&h=600&fit=crop&q=85"],
+   imgs:["https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=800&h=800&fit=crop&q=90","https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?w=800&h=800&fit=crop&q=90"],
    price:24850,old:35850,badge:"hot",category:"accessory",rating:4.5,reviews:1876,
    specs:{"Display":"1.96\" AMOLED","Battery":"7 days","Health":"SpO2+HR+Sleep","GPS":"Built-in","Water":"IP68"},
    desc:"Oraimo Watch 5R — AMOLED display, built-in GPS, SpO2 & heart rate, 7-day battery, IP68."},
 
   {id:706,name:"Oraimo Watch Nova AM",brand:"Oraimo",brandKey:"oraimo",icon:"⌚",
-   imgs:["https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?w=600&h=600&fit=crop&q=85","https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600&h=600&fit=crop&q=85"],
+   imgs:["https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?w=800&h=800&fit=crop&crop=top&q=90","https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=800&h=800&fit=crop&crop=top&q=90"],
    price:19850,old:28850,badge:"new",category:"accessory",rating:4.5,reviews:1120,
    specs:{"Display":"1.85\" AMOLED","Battery":"5 days","Health":"SpO2+HR","Calls":"Bluetooth Calls","Water":"IP67"},
    desc:"Oraimo Watch Nova AM — Bluetooth calling, AMOLED display, health tracking, 5-day battery."},
 
   {id:707,name:"Oraimo Watch ES 2",brand:"Oraimo",brandKey:"oraimo",icon:"⌚",
-   imgs:["https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600&h=600&fit=crop&q=85","https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?w=600&h=600&fit=crop&q=85"],
+   imgs:["https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=800&h=800&fit=crop&crop=bottom&q=90","https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?w=800&h=800&fit=crop&crop=bottom&q=90"],
    price:14850,old:22850,badge:"sale",category:"accessory",rating:4.3,reviews:876,
    specs:{"Display":"1.69\" TFT","Battery":"7 days","Health":"HR+SpO2","Sports":"20+ modes","Water":"IP67"},
    desc:"Oraimo Watch ES 2 — budget-friendly smartwatch with 20+ sport modes and 7-day battery."},
 
   // Oraimo Power Banks & Chargers
   {id:708,name:"Oraimo Link 27 Power Bank",brand:"Oraimo",brandKey:"oraimo",icon:"🔋",
-   imgs:["https://images.unsplash.com/photo-1609091839311-d5365f9ff1c5?w=600&h=600&fit=crop&q=85","https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=600&h=600&fit=crop&q=85"],
+   imgs:["https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=800&h=800&fit=crop&q=90","https://images.unsplash.com/photo-1609091839311-d5365f9ff1c5?w=800&h=800&fit=crop&q=90"],
    price:19850,old:29850,badge:"hot",category:"accessory",rating:4.6,reviews:2100,
    specs:{"Capacity":"20000mAh","Output":"27W PD","Ports":"USB-C + 2x USB-A","Input":"22.5W","Weight":"445g"},
    desc:"Oraimo Link 27 — 20000mAh, 27W fast charging, USB-C PD, charges 3 devices at once."},
 
   {id:709,name:"Oraimo MagPower 15 Charger",brand:"Oraimo",brandKey:"oraimo",icon:"🔌",
-   imgs:["https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=600&h=600&fit=crop&q=85","https://images.unsplash.com/photo-1609091839311-d5365f9ff1c5?w=600&h=600&fit=crop&q=85"],
+   imgs:["https://images.unsplash.com/photo-1609091839311-d5365f9ff1c5?w=800&h=800&fit=crop&crop=top&q=90","https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=800&h=800&fit=crop&crop=top&q=90"],
    price:12850,old:19850,badge:"new",category:"accessory",rating:4.5,reviews:1320,
    specs:{"Type":"MagSafe-compatible","Output":"15W Wireless","Compatible":"iPhone 12+","Design":"Slim pad","Cable":"USB-C"},
    desc:"Oraimo MagPower 15 — magnetic 15W wireless charger, compatible with MagSafe iPhones."},
 
   {id:710,name:"Oraimo PowerJet 130 Power Bank",brand:"Oraimo",brandKey:"oraimo",icon:"🔋",
-   imgs:["https://images.unsplash.com/photo-1609091839311-d5365f9ff1c5?w=600&h=600&fit=crop&q=85","https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=600&h=600&fit=crop&q=85"],
+   imgs:["https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=800&h=800&fit=crop&crop=bottom&q=90","https://images.unsplash.com/photo-1609091839311-d5365f9ff1c5?w=800&h=800&fit=crop&crop=bottom&q=90"],
    price:39850,old:55850,badge:"hot",category:"accessory",rating:4.7,reviews:987,
    specs:{"Capacity":"30000mAh","Output":"130W PD","Ports":"2x USB-C + 2x USB-A","Display":"LED","Laptop":"Charge capable"},
    desc:"Oraimo PowerJet 130 — 30000mAh monster bank with 130W output, charges laptops and 4 devices at once."},
 
   {id:711,name:"Oraimo Travel Charger",brand:"Oraimo",brandKey:"oraimo",icon:"🔌",
-   imgs:["https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=600&h=600&fit=crop&q=85","https://images.unsplash.com/photo-1609091839311-d5365f9ff1c5?w=600&h=600&fit=crop&q=85"],
+   imgs:["https://images.unsplash.com/photo-1609091839311-d5365f9ff1c5?w=800&h=800&fit=crop&crop=left&q=90","https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=800&h=800&fit=crop&crop=right&q=90"],
    price:9850,old:15850,badge:"sale",category:"accessory",rating:4.4,reviews:2310,
    specs:{"Ports":"USB-C + USB-A","Output":"65W PD","Size":"Compact foldable","Input":"Universal 100-240V","Cable":"Included"},
    desc:"Oraimo Travel Charger — compact 65W foldable GaN charger, works worldwide, charges laptops."},
 
   // Oraimo Clippers
   {id:712,name:"Oraimo SmartClipper 2 Prestige",brand:"Oraimo",brandKey:"oraimo",icon:"✂️",
-   imgs:["https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=600&h=600&fit=crop&q=85","https://images.unsplash.com/photo-1622295894004-3bc82f5fcf80?w=600&h=600&fit=crop&q=85"],
+   imgs:["https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=800&h=800&fit=crop&q=90","https://images.unsplash.com/photo-1622295894004-3bc82f5fcf80?w=800&h=800&fit=crop&q=90"],
    price:24850,old:35850,badge:"new",category:"accessory",rating:4.6,reviews:1540,
    specs:{"Motor":"High-torque rotary","Battery":"120min","Blades":"Titanium","Modes":"5 speed","Waterproof":"IPX7"},
    desc:"Oraimo SmartClipper 2 Prestige — precision titanium blades, 120min battery, IPX7 waterproof."},
 
   {id:713,name:"Oraimo SmartClipper Pro Max",brand:"Oraimo",brandKey:"oraimo",icon:"✂️",
-   imgs:["https://images.unsplash.com/photo-1622295894004-3bc82f5fcf80?w=600&h=600&fit=crop&q=85","https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=600&h=600&fit=crop&q=85"],
+   imgs:["https://images.unsplash.com/photo-1622295894004-3bc82f5fcf80?w=800&h=800&fit=crop&crop=top&q=90","https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=800&h=800&fit=crop&crop=top&q=90"],
    price:32850,old:45850,badge:"hot",category:"accessory",rating:4.7,reviews:987,
    specs:{"Motor":"Zero-gap rotary","Battery":"150min","Blades":"Diamond DLC","Modes":"7 speed","Display":"LED"},
    desc:"Oraimo SmartClipper Pro Max — zero-gap DLC blades, 150min runtime, LED display, pro-grade finish."},
@@ -2481,20 +2842,20 @@ function getProducts(cat, brandKey){
 
 // ── REVIEWS DATA ──
 var reviews=[
-  {name:"Chukwuemeka O.",rating:5,product:"iPhone 16 Pro Max",text:"Absolutely love this phone! Camera is incredible, battery lasts all day. Delivery was fast and packaging was perfect. Will definitely order again!",date:"Jan 2025",verified:true},
-  {name:"Aisha M.",rating:5,product:"Samsung Galaxy S25 Ultra",text:"Best Android phone I have ever used. The S Pen makes note-taking so easy. Blessed Joe delivered it same day — very impressed!",date:"Feb 2025",verified:true},
-  {name:"Tunde A.",rating:5,product:'MacBook Pro 16" M4 Max',text:"This machine is a beast. Renders videos in seconds. Top-notch customer service too — they helped me pick the right spec.",date:"Feb 2025",verified:true},
-  {name:"Ngozi E.",rating:4,product:"Sony WH-1000XM6",text:"Noise cancellation is on another level. Perfect for my commute. Product was genuine and arrived sealed. Happy customer!",date:"Mar 2025",verified:true},
-  {name:"Biodun K.",rating:5,product:"Google Pixel 9 Pro XL",text:"The camera AI blew me away. Night shots look like daylight! Great store, fast shipping, 100% authentic.",date:"Mar 2025",verified:true},
-  {name:"Fatima S.",rating:5,product:"AirPods Pro 3",text:"Seamless connection with my iPhone. The adaptive transparency is so natural. Verified the serial number — 100% genuine!",date:"Jan 2025",verified:true}
+  {name:"Chukwuemeka O.",rating:5,product:"iPhone 16 Pro Max",text:"Absolutely love this phone! Camera is incredible, battery lasts all day. Delivery was fast and packaging was perfect. Will definitely order again!",date:"Jan 2026",verified:true},
+  {name:"Aisha M.",rating:5,product:"Samsung Galaxy S25 Ultra",text:"Best Android phone I have ever used. The S Pen makes note-taking so easy. Blessed Joe delivered it same day — very impressed!",date:"Feb 2026",verified:true},
+  {name:"Tunde A.",rating:5,product:'MacBook Pro 16" M4 Max',text:"This machine is a beast. Renders videos in seconds. Top-notch customer service too — they helped me pick the right spec.",date:"Feb 2026",verified:true},
+  {name:"Ngozi E.",rating:4,product:"Sony WH-1000XM6",text:"Noise cancellation is on another level. Perfect for my commute. Product was genuine and arrived sealed. Happy customer!",date:"Mar 2026",verified:true},
+  {name:"Biodun K.",rating:5,product:"Google Pixel 9 Pro XL",text:"The camera AI blew me away. Night shots look like daylight! Great store, fast shipping, 100% authentic.",date:"Mar 2026",verified:true},
+  {name:"Fatima S.",rating:5,product:"AirPods Pro 3",text:"Seamless connection with my iPhone. The adaptive transparency is so natural. Verified the serial number — 100% genuine!",date:"Jan 2026",verified:true}
 ];
 
 var orders=[
-  {id:"BJBG-3821",cust:"Chukwuemeka O.",items:2,total:3628200,date:"Mar 3, 2025",status:"shipped"},
-  {id:"BJBG-3820",cust:"Aisha M.",items:1,total:2143350,date:"Mar 3, 2025",status:"processing"},
-  {id:"BJBG-3819",cust:"Tunde A.",items:3,total:7092050,date:"Mar 2, 2025",status:"pending"},
-  {id:"BJBG-3818",cust:"Ngozi E.",items:1,total:658850,date:"Mar 2, 2025",status:"shipped"},
-  {id:"BJBG-3817",cust:"Biodun K.",items:2,total:3133200,date:"Mar 1, 2025",status:"cancelled"}
+  {id:"BJBG-3821",cust:"Chukwuemeka O.",items:2,total:3628200,date:"Mar 3, 2026",status:"shipped"},
+  {id:"BJBG-3820",cust:"Aisha M.",items:1,total:2143350,date:"Mar 3, 2026",status:"processing"},
+  {id:"BJBG-3819",cust:"Tunde A.",items:3,total:7092050,date:"Mar 2, 2026",status:"pending"},
+  {id:"BJBG-3818",cust:"Ngozi E.",items:1,total:658850,date:"Mar 2, 2026",status:"shipped"},
+  {id:"BJBG-3817",cust:"Biodun K.",items:2,total:3133200,date:"Mar 1, 2026",status:"cancelled"}
 ];
 
 // ── CART ──
@@ -2531,16 +2892,55 @@ function toggleCart(){document.getElementById('cOver').classList.toggle('open');
 function showToast(msg){var t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(function(){t.classList.remove('show');},2500);}
 
 // ── RENDER CARD ── multi-image carousel
+
+// === STOCK & CONDITION HELPERS ===
+var stockMap={};
+function getStock(id){
+  if(stockMap[id]===undefined){
+    var r=Math.random();
+    stockMap[id]=r<0.12?Math.floor(Math.random()*2+1):r<0.32?Math.floor(Math.random()*3+2):Math.floor(Math.random()*30+8);
+  }
+  return stockMap[id];
+}
+function getStockLabel(n){
+  if(n<=0)return{cls:'out',txt:'Out of Stock',dot:''};
+  if(n<=3)return{cls:'low',txt:'Only '+n+' left!',dot:''};
+  if(n<=7)return{cls:'low',txt:'Low stock \u2014 '+n+' left',dot:''};
+  return{cls:'in',txt:'In Stock',dot:''};
+}
+var condCache={};
+function getConditionCached(p){
+  if(!condCache[p.id]){
+    if(p.category==='phone'||p.category==='tablet'){
+      var b=Math.floor(Math.random()*12+87);
+      condCache[p.id]={grade:b>=95?'A+':b>=90?'A':'A\u2212',battery:b,type:'Grade A UK Used',box:['Device','Charging Cable','Adapter','SIM Tool','Case']};
+    } else if(p.category==='laptop'){
+      condCache[p.id]={grade:'A',battery:null,type:'Grade A Refurbished',box:['Device','Original Charger','Carry Bag','12-Month Warranty']};
+    } else {
+      condCache[p.id]={grade:null,battery:null,type:'Brand New & Sealed',box:['Device','Original Box','All Accessories','1-Year Warranty']};
+    }
+  }
+  return condCache[p.id];
+}
+
 function renderCard(p){
-  var stars='★'.repeat(Math.floor(p.rating))+'☆'.repeat(5-Math.floor(p.rating));
+  var stars='\u2605'.repeat(Math.floor(p.rating))+'\u2606'.repeat(5-Math.floor(p.rating));
   var badgeHtml=p.badge?'<span class="pbadge b'+p.badge[0]+'">'+p.badge+'</span>':'';
   var imgs=p.imgs&&p.imgs.length?p.imgs:(p.img?[p.img]:[]);
+  imgs=imgs.map(function(src){
+    if(src.indexOf('unsplash.com')>-1&&src.indexOf('fm=')===-1){
+      return src+(src.indexOf('?')>-1?'&':'?')+'fm=webp&auto=format';
+    }
+    return src;
+  });
+  var stock=getStock(p.id);
+  var sl=getStockLabel(stock);
+  var cond=getConditionCached(p);
   var carouselHtml='';
   if(imgs.length>0){
     var slides=imgs.map(function(src,i){
       return '<div class="pcs-slide'+(i===0?' act':'')+'" data-idx="'+i+'">'
-        +'<img src="'+src+'" alt="'+p.name+'" loading="lazy" '
-        +'onerror="this.parentElement.style.display=\'none\'">'
+        +'<img src="'+src+'" alt="'+p.name+'" loading="lazy" onerror="this.parentElement.style.display=\'none\'">'
         +'</div>';
     }).join('');
     var dots=imgs.length>1?'<div class="pcs-dots">'+imgs.map(function(_,i){
@@ -2550,23 +2950,29 @@ function renderCard(p){
       ?'<button class="pcs-arr pcs-prev" onclick="event.stopPropagation();pcNav(this,-1)">&#8249;</button>'
        +'<button class="pcs-arr pcs-next" onclick="event.stopPropagation();pcNav(this,1)">&#8250;</button>'
       :'';
-    carouselHtml='<div class="pcs">'+arrows+slides+dots+'</div>';
+    carouselHtml='<div class="pcs" id="pcs-'+p.id+'" data-pid="'+p.id+'" data-total="'+imgs.length+'">'+arrows+slides+dots+'</div>';
   } else {
     carouselHtml='<div class="picon" style="display:flex;align-items:center;justify-content:center;width:100%;height:100%;font-size:5rem;">'+p.icon+'</div>';
   }
   var specsHtml=p.specs?Object.values(p.specs).slice(0,3).map(function(v){return '<span class="ptag">'+v+'</span>';}).join(''):'';
-  var oldHtml=p.old?'<span class="old">₦'+p.old.toLocaleString()+'</span>':'';
+  var oldHtml=p.old?'<span class="old">&#8358;'+p.old.toLocaleString()+'</span>':'';
   return '<div class="pcard fu" onclick="openProd('+p.id+')">'
     +'<div class="pimgwrap">'+badgeHtml
-    +'<button class="pwish" onclick="event.stopPropagation();this.classList.toggle(\'on\');this.textContent=this.classList.contains(\'on\')? \'❤️\':\'🤍\'">🤍</button>'
+    +'<button class="pwish" onclick="event.stopPropagation();this.classList.toggle(\'on\');this.textContent=this.classList.contains(\'on\')?\'\u2764\uFE0F\':\'\uD83E\uDD0D\'">&#129293;</button>'
+    +'<button class="cmp-add-btn" id="cmpcard-'+p.id+'" onclick="event.stopPropagation();toggleCompare('+p.id+')">&#9878; Compare</button>'
     +carouselHtml+'</div>'
-    +'<div class="pinfo"><div class="pbrnd">'+p.brand+'</div><div class="pname">'+p.name+'</div>'
+    +'<div class="pinfo">'
+    +'<div class="pbrnd">'+p.brand+'</div>'
+    +'<div class="pname">'+p.name+'</div>'
+    +'<span class="pcond">'+cond.type+'</span>'
+    +'<span class="pstock '+sl.cls+'"><span class="sdot"></span> '+sl.txt+'</span>'
     +'<div class="ptags">'+specsHtml+'</div>'
     +'<div class="pstars"><span class="stars">'+stars+'</span><span class="rcount">('+p.reviews.toLocaleString()+')</span></div>'
-    +'<div class="pfoot"><div class="pprice">'+oldHtml+'₦'+p.price.toLocaleString()+'</div>'
+    +'<div class="pfoot"><div class="pprice">'+oldHtml+'&#8358;'+p.price.toLocaleString()+'</div>'
     +'<button class="addbtn" onclick="event.stopPropagation();addToCart('+p.id+')">+ Cart</button>'
     +'</div></div></div>';
 }
+
 
 function pcNav(btn,dir){
   var wrap=btn.closest('.pimgwrap');
@@ -2590,38 +2996,38 @@ function pcSlide(dot,idx){
 }
 
 function renderAll(){
-  document.getElementById('phonesGrid').innerHTML=getProducts('phone').map(renderCard).join('');
-  document.getElementById('laptopsGrid').innerHTML=getProducts('laptop').map(renderCard).join('');
-  document.getElementById('audioGrid').innerHTML=getProducts('audio').map(renderCard).join('');
-  document.getElementById('tabletsGrid').innerHTML=getProducts('tablet').map(renderCard).join('');
-  document.getElementById('accessoriesGrid').innerHTML=getProducts('accessory').map(renderCard).join('');
+  document.getElementById('phonesGrid').innerHTML=getProducts('phone').map(renderCard).join('');setTimeout(initAutoSwipe,80);
+  document.getElementById('laptopsGrid').innerHTML=getProducts('laptop').map(renderCard).join('');setTimeout(initAutoSwipe,80);
+  document.getElementById('audioGrid').innerHTML=getProducts('audio').map(renderCard).join('');setTimeout(initAutoSwipe,80);
+  document.getElementById('tabletsGrid').innerHTML=getProducts('tablet').map(renderCard).join('');setTimeout(initAutoSwipe,80);
+  document.getElementById('accessoriesGrid').innerHTML=getProducts('accessory').map(renderCard).join('');setTimeout(initAutoSwipe,80);
 }
 
 // ── FILTERS ──
 function setAudioFilter(brand,btn){
   document.querySelectorAll('#audiofbar .fbtn').forEach(function(b){b.classList.remove('act');});
   if(btn)btn.classList.add('act');
-  document.getElementById('audioGrid').innerHTML=getProducts('audio',brand).map(renderCard).join('');
+  document.getElementById('audioGrid').innerHTML=getProducts('audio',brand).map(renderCard).join('');setTimeout(initAutoSwipe,80);
 }
 function setPhoneFilter(brand,btn){
   document.querySelectorAll('#pfbar .fbtn').forEach(function(b){b.classList.remove('act');});
   if(btn)btn.classList.add('act');
-  document.getElementById('phonesGrid').innerHTML=getProducts('phone',brand).map(renderCard).join('');
+  document.getElementById('phonesGrid').innerHTML=getProducts('phone',brand).map(renderCard).join('');setTimeout(initAutoSwipe,80);
 }
 function setLaptopFilter(brand,btn){
   document.querySelectorAll('#lfbar .fbtn').forEach(function(b){b.classList.remove('act');});
   if(btn)btn.classList.add('act');
-  document.getElementById('laptopsGrid').innerHTML=getProducts('laptop',brand).map(renderCard).join('');
+  document.getElementById('laptopsGrid').innerHTML=getProducts('laptop',brand).map(renderCard).join('');setTimeout(initAutoSwipe,80);
 }
 function setTabletFilter(brand,btn){
   document.querySelectorAll('#tfbar .fbtn').forEach(function(b){b.classList.remove('act');});
   if(btn)btn.classList.add('act');
-  document.getElementById('tabletsGrid').innerHTML=getProducts('tablet',brand).map(renderCard).join('');
+  document.getElementById('tabletsGrid').innerHTML=getProducts('tablet',brand).map(renderCard).join('');setTimeout(initAutoSwipe,80);
 }
 function setAccFilter(brand,btn){
   document.querySelectorAll('#afbar .fbtn').forEach(function(b){b.classList.remove('act');});
   if(btn)btn.classList.add('act');
-  document.getElementById('accessoriesGrid').innerHTML=getProducts('accessory',brand).map(renderCard).join('');
+  document.getElementById('accessoriesGrid').innerHTML=getProducts('accessory',brand).map(renderCard).join('');setTimeout(initAutoSwipe,80);
 }
 
 // ── SEARCH ──
@@ -2629,11 +3035,11 @@ document.getElementById('srchIn').addEventListener('input',function(){
   var q=this.value.toLowerCase().trim();
   if(!q){renderAll();return;}
   var res=allProducts.filter(function(p){return p.name.toLowerCase().includes(q)||p.brand.toLowerCase().includes(q);});
-  document.getElementById('phonesGrid').innerHTML=res.filter(function(p){return p.category==='phone';}).map(renderCard).join('');
-  document.getElementById('laptopsGrid').innerHTML=res.filter(function(p){return p.category==='laptop';}).map(renderCard).join('');
-  document.getElementById('audioGrid').innerHTML=res.filter(function(p){return p.category==='audio';}).map(renderCard).join('');
-  document.getElementById('tabletsGrid').innerHTML=res.filter(function(p){return p.category==='tablet';}).map(renderCard).join('');
-  document.getElementById('accessoriesGrid').innerHTML=res.filter(function(p){return p.category==='accessory';}).map(renderCard).join('');
+  document.getElementById('phonesGrid').innerHTML=res.filter(function(p){return p.category==='phone';}).map(renderCard).join('');setTimeout(initAutoSwipe,80);
+  document.getElementById('laptopsGrid').innerHTML=res.filter(function(p){return p.category==='laptop';}).map(renderCard).join('');setTimeout(initAutoSwipe,80);
+  document.getElementById('audioGrid').innerHTML=res.filter(function(p){return p.category==='audio';}).map(renderCard).join('');setTimeout(initAutoSwipe,80);
+  document.getElementById('tabletsGrid').innerHTML=res.filter(function(p){return p.category==='tablet';}).map(renderCard).join('');setTimeout(initAutoSwipe,80);
+  document.getElementById('accessoriesGrid').innerHTML=res.filter(function(p){return p.category==='accessory';}).map(renderCard).join('');setTimeout(initAutoSwipe,80);
 });
 
 // ── PRODUCT MODAL ──
@@ -2835,6 +3241,7 @@ function openProd(id){
   variantsEl.innerHTML=vhtml;
 
   // Desc, specs, reviews
+  _populateModalCond(p);
   document.getElementById('mDesc').textContent=p.desc;
   document.getElementById('mSpecs').innerHTML=p.specs?Object.entries(p.specs).map(function(e){
     return '<div class="specrow"><span>'+e[0]+'</span><span>'+e[1]+'</span></div>';
@@ -3016,7 +3423,7 @@ function placeOrder(){
   var onum='BJBG-'+Math.floor(Math.random()*9000+1000);
   document.getElementById('orderNum').textContent=onum;
   nextStep(4);
-  orders.unshift({id:onum,cust:"New Customer",items:cart.length,total:cart.reduce(function(s,i){return s+i.price*i.qty;},0),date:"Mar 4, 2025",status:"pending"});
+  orders.unshift({id:onum,cust:"New Customer",items:cart.length,total:cart.reduce(function(s,i){return s+i.price*i.qty;},0),date:"Mar 4, 2026",status:"pending"});
   cart=[];updateCartUI();buildAdminOrders();
 }
 function selPay(el){document.querySelectorAll('.pmethod').forEach(function(e){e.classList.remove('sel');});el.classList.add('sel');}
@@ -3116,7 +3523,7 @@ document.querySelectorAll('button,a,.pcard,.ccard,.pbcard').forEach(function(el)
     {badge:'NEW',title:'iPhone 16 Pro Max',desc:'Titanium design. A18 Pro chip. Revolutionary camera system with 5x optical zoom and ProRes video.',price:'₦1,979,850',old:'₦2,143,350',icon:'📱',img:'https://pngimg.com/uploads/iphone16/iphone16_PNG19.png'},
     {badge:'HOT',title:'MacBook Pro M4 Max',desc:'The most powerful MacBook ever. M4 Max chip blazes through any professional workload with ease.',price:'₦4,948,350',old:'₦6,598,350',icon:'💻',img:'https://pngimg.com/uploads/macbook/macbook_PNG8.png'},
     {badge:'SALE',title:'Sony WH-1000XM6',desc:'Industry-leading noise cancellation meets Hi-Res Audio. 40 hours battery. Multipoint connect.',price:'₦658,850',old:'₦824,850',icon:'🎧',img:'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=600&h=600&fit=crop&q=85'},
-    {badge:'NEW',title:'Samsung Galaxy S25 Ultra',desc:'200MP camera meets Snapdragon 8 Elite. S Pen included. The ultimate Android flagship of 2025.',price:'₦2,143,350',old:'₦2,309,850',icon:'📱',img:'https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?w=600&h=700&fit=crop&q=85'},
+    {badge:'NEW',title:'Samsung Galaxy S25 Ultra',desc:'200MP camera meets Snapdragon 8 Elite. S Pen included. The ultimate Android flagship of 2026.',price:'₦2,143,350',old:'₦2,309,850',icon:'📱',img:'https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?w=600&h=700&fit=crop&q=85'},
   ];
   var scIdx = 0;
 
@@ -3210,9 +3617,207 @@ function stopImgCycle(pid){
   if(imgCycleTimers[pid]){clearInterval(imgCycleTimers[pid]);delete imgCycleTimers[pid];}
 }
 
+
+// === AUTO-SWIPE ===
+var _swipeTimers={};
+var _touchX={};
+var _touchY={};
+
+function _swipeStart(pcs){
+  var pid=pcs.dataset.pid;
+  if(!pid||parseInt(pcs.dataset.total)<=1)return;
+  _swipeStop(pid);
+  _swipeTimers[pid]=setTimeout(function(){
+    var slides=pcs.querySelectorAll('.pcs-slide');
+    var dots=pcs.querySelectorAll('.pcs-dot');
+    var cur=pcs.querySelector('.pcs-slide.act');
+    var i=Array.from(slides).indexOf(cur);
+    var nx=(i+1)%slides.length;
+    slides[i].classList.remove('act'); slides[nx].classList.add('act');
+    if(dots.length){dots[i].classList.remove('act');dots[nx].classList.add('act');}
+    _swipeStart(pcs);
+  },5000);
+}
+function _swipeStop(pid){
+  if(_swipeTimers[pid]){clearTimeout(_swipeTimers[pid]);delete _swipeTimers[pid];}
+}
+function initAutoSwipe(){
+  document.querySelectorAll('.pcs[data-total]').forEach(function(pcs){
+    if(parseInt(pcs.dataset.total)<=1||pcs.dataset.si)return;
+    pcs.dataset.si='1';
+    var pid=pcs.dataset.pid;
+    pcs.addEventListener('touchstart',function(e){_touchX[pid]=e.touches[0].clientX;_touchY[pid]=e.touches[0].clientY;_swipeStop(pid);},{passive:true});
+    pcs.addEventListener('touchend',function(e){
+      var dx=e.changedTouches[0].clientX-(_touchX[pid]||0);
+      var dy=e.changedTouches[0].clientY-(_touchY[pid]||0);
+      if(Math.abs(dx)>Math.abs(dy)&&Math.abs(dx)>35){
+        var slides=pcs.querySelectorAll('.pcs-slide');
+        var dots=pcs.querySelectorAll('.pcs-dot');
+        var cur=pcs.querySelector('.pcs-slide.act');
+        var i=Array.from(slides).indexOf(cur);
+        var nx=(i+(dx<0?1:-1)+slides.length)%slides.length;
+        slides[i].classList.remove('act');slides[nx].classList.add('act');
+        if(dots.length){dots[i].classList.remove('act');dots[nx].classList.add('act');}
+      }
+      _swipeStart(pcs);
+    },{passive:true});
+    var card=pcs.closest('.pcard');
+    if(card){
+      card.addEventListener('mouseenter',function(){_swipeStop(pid);});
+      card.addEventListener('mouseleave',function(){_swipeStart(pcs);});
+    }
+    _swipeStart(pcs);
+  });
+}
+
+// === COMPARE ===
+var compareList=[];
+var MAX_CMP=3;
+
+function toggleCompare(pid){
+  pid=parseInt(pid);
+  var p=allProducts.find(function(x){return x.id===pid;});
+  if(!p)return;
+  var i=compareList.findIndex(function(x){return x.id===pid;});
+  if(i>-1){compareList.splice(i,1);}
+  else{
+    if(compareList.length>=MAX_CMP){showToast('Max '+MAX_CMP+' products!');return;}
+    compareList.push(p);
+  }
+  _cmpUpdateFab();
+  _cmpUpdateBtns();
+}
+function _cmpUpdateFab(){
+  var fab=document.getElementById('cmpFab');
+  if(!fab)return;
+  document.getElementById('cmpBadge').textContent=compareList.length;
+  fab.classList.toggle('show',compareList.length>0);
+  document.getElementById('cmpTray').innerHTML=compareList.map(function(p){
+    var s=p.name.split(' ').slice(0,3).join(' ');
+    return '<div class="cmp-chip">'+s+'<button onclick="toggleCompare('+p.id+')">&#10005;</button></div>';
+  }).join('');
+}
+function _cmpUpdateBtns(){
+  document.querySelectorAll('.cmp-add-btn').forEach(function(b){b.classList.remove('added');b.innerHTML='&#9878; Compare';});
+  compareList.forEach(function(p){
+    var b=document.getElementById('cmpcard-'+p.id);
+    if(b){b.classList.add('added');b.textContent='&#10003; Added';}
+  });
+}
+function openCompare(){
+  if(compareList.length<2){showToast('Select at least 2 products to compare!');return;}
+  var specDefs=[
+    {label:'Display',  keys:['Display','Screen']},
+    {label:'Chip',     keys:['Chip','Processor','CPU']},
+    {label:'Camera',   keys:['Camera']},
+    {label:'Storage',  keys:['Storage']},
+    {label:'Battery',  keys:['Battery']},
+    {label:'RAM',      keys:['RAM','Memory']},
+    {label:'OS',       keys:['OS','Operating System']}
+  ];
+  var prices=compareList.map(function(p){return p.price;});
+  var minP=Math.min.apply(null,prices), maxP=Math.max.apply(null,prices);
+  var t='<colgroup><col style="width:115px"/>';
+  compareList.forEach(function(){t+='<col/>';});
+  t+='</colgroup><thead><tr><th></th>';
+  compareList.forEach(function(p){
+    var src=p.imgs&&p.imgs[0]?p.imgs[0]:(p.img||'');
+    var img=src?'<img class="cmp-prod-img" src="'+src+'" alt="'+p.name+'" loading="lazy" onerror="this.style.opacity=0">'
+      :'<div style="font-size:2.8rem;text-align:center;margin-bottom:.4rem;">'+p.icon+'</div>';
+    t+='<th><div class="cmp-card-wrap"><div class="cmp-card-3d">'
+      +img
+      +'<div class="cmp-prod-brand">'+p.brand+'</div>'
+      +'<div class="cmp-prod-name">'+p.name+'</div>'
+      +'<button class="cmp-cart-btn" onclick="addToCart('+p.id+');showToast(\'Added!\')">+ Add to Cart</button>'
+      +'</div></div></th>';
+  });
+  t+='</tr></thead><tbody>';
+  // Price
+  t+='<tr><td>Price</td>';
+  compareList.forEach(function(p){
+    var cls=prices.length>1?(p.price===minP?' best':p.price===maxP?' worst':''):'';
+    t+='<td><span class="cmp-price-cell'+cls+'">&#8358;'+p.price.toLocaleString()+'</span>'
+      +(p.old?'<br><small style="color:var(--muted);text-decoration:line-through;font-size:.67rem;">&#8358;'+p.old.toLocaleString()+'</small>':'')+'</td>';
+  });
+  t+='</tr>';
+  // Condition
+  t+='<tr><td>Condition</td>';
+  compareList.forEach(function(p){
+    var c=getConditionCached(p);
+    t+='<td>'+c.type+(c.grade?'<br><small style="color:var(--gold-dark);font-weight:700;">Grade '+c.grade+'</small>':'')+'</td>';
+  });
+  t+='</tr>';
+  // Battery health (only if any product has it)
+  if(compareList.some(function(p){return getConditionCached(p).battery;})){
+    t+='<tr><td>Battery</td>';
+    compareList.forEach(function(p){
+      var b=getConditionCached(p).battery;
+      t+='<td>'+(b?b+'%<br><small style="color:'+(b>=90?'#16a34a':b>=80?'#d97706':'#dc2626')+';font-weight:700;">'+(b>=90?'Excellent':b>=80?'Good':'Fair')+'</small>':'N/A')+'</td>';
+    });
+    t+='</tr>';
+  }
+  // Spec rows
+  specDefs.forEach(function(row){
+    var vals=compareList.map(function(p){
+      if(!p.specs)return null;
+      var key=Object.keys(p.specs).find(function(k){
+        return row.keys.some(function(rk){return k.toLowerCase()===rk.toLowerCase();});
+      });
+      return key?p.specs[key]:null;
+    });
+    if(!vals.some(function(v){return v;}))return;
+    t+='<tr><td>'+row.label+'</td>';
+    vals.forEach(function(v){t+='<td>'+(v?v:'&#8212;')+'</td>';});
+    t+='</tr>';
+  });
+  // Rating
+  t+='<tr><td>Rating</td>';
+  compareList.forEach(function(p){
+    t+='<td>&#9733; '+(p.rating||5).toFixed(1)+' <small style="color:var(--muted)">('+((p.reviews||0)).toLocaleString()+')</small></td>';
+  });
+  t+='</tr></tbody>';
+  document.getElementById('cmpContent').innerHTML='<div style="overflow-x:auto;-webkit-overflow-scrolling:touch;"><table class="cmpTable">'+t+'</table></div>';
+  document.getElementById('cmpBtnRow').innerHTML=compareList.map(function(p){
+    var s=p.name.split(' ').slice(0,3).join(' ');
+    return '<button class="addbtn" style="padding:.6rem 1.2rem;font-size:.71rem;" onclick="addToCart('+p.id+');showToast(\'Added!\')">+ Cart &middot; '+s+'</button>';
+  }).join('');
+  document.getElementById('cmpOver').classList.add('open');
+}
+function closeCompare(){document.getElementById('cmpOver').classList.remove('open');}
+
+// === MODAL CONDITION + STOCK ===
+function _populateModalCond(p){
+  var cond=getConditionCached(p);
+  var batt=cond.battery;
+  var battHtml='';
+  if(batt){
+    var bcls=batt<80?'low':batt<90?'med':'';
+    battHtml='<div class="mCondItem"><div class="mCondKey">Battery</div>'
+      +'<div class="mCondVal">'+batt+'%</div>'
+      +'<div class="mBattBar"><div class="mBattFill '+bcls+'" style="width:'+batt+'%"></div></div>'
+      +'</div>';
+  }
+  var boxHtml='<div class="mCondItem" style="grid-column:1/-1">'
+    +'<div class="mCondKey">In the Box</div>'
+    +'<div class="mBoxRow">'+cond.box.map(function(b){return '<span class="mBoxTag">&#10003; '+b+'</span>';}).join('')+'</div>'
+    +'</div>';
+  var html='<div class="mCondBlock"><div class="mCondTitle">Condition &amp; Inclusions</div><div class="mCondGrid">'
+    +'<div class="mCondItem"><div class="mCondKey">Type</div><div class="mCondVal">'+cond.type+'</div></div>'
+    +(cond.grade?'<div class="mCondItem"><div class="mCondKey">Grade</div><div class="mCondVal">'+cond.grade+' &#10003;</div></div>':'')
+    +battHtml+boxHtml
+    +'</div></div>';
+  var sec=document.getElementById('mCondSection');
+  if(sec)sec.innerHTML=html;
+  var stock=getStock(p.id);
+  var sl=getStockLabel(stock);
+  var sb=document.getElementById('mStockBadge');
+  if(sb){sb.className='mModalStock '+sl.cls;sb.innerHTML='<span class="sdot"></span> '+sl.txt;}
+}
+
 // ── INIT ──
 buildSlider();
 renderAll();
+setTimeout(initAutoSwipe,150);
 buildReviews();
 
 // ── SEARCH OVERLAY ──
@@ -3291,5 +3896,25 @@ function runOverlaySearch(){
   }).join('');
 }
 </script>
+
+<!-- COMPARE FAB -->
+<div class="cmp-fab" id="cmpFab">
+  <div class="cmp-tray" id="cmpTray"></div>
+  <button class="cmp-btn" onclick="openCompare()">
+    &#9878; Compare
+    <span class="cmp-badge-num" id="cmpBadge">0</span>
+  </button>
+</div>
+<!-- COMPARE OVERLAY -->
+<div class="cmpOver" id="cmpOver" onclick="if(event.target===this)closeCompare()">
+  <div class="cmpBox">
+    <div class="cmpHead">
+      <h2>&#9878; Side-by-Side Comparison</h2>
+      <button class="cmpClose" onclick="closeCompare()">&#10005; Close</button>
+    </div>
+    <div class="cmpBody"><div id="cmpContent"></div></div>
+    <div class="cmpBtnRow" id="cmpBtnRow"></div>
+  </div>
+</div>
 </body>
 </html>
